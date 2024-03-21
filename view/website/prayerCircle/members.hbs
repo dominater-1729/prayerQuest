@@ -1,0 +1,95 @@
+<head>
+    {{>websiteHeader}}
+    {{{body}}}
+</head>
+<section id="listing" class="pt-50 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="ps-0  d-flex flex-wrap gap-2  align-items-center pb-50" style="list-style: none;">
+                    <li class="text-yeloish">Home</li>
+                    <li>></li>
+                    <li class="text-yeloish">Group Profile</li>
+                    <li>></li>
+                    <li>Members</li>
+
+                </ul>
+
+            </div>
+
+            <div class="col-lg-12">
+                <div class="listing d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <div>
+                        <h3 class="mb-0 fw-bold">Members Listings</h3>
+                        <p class="mb-0 text-black-50">( Showing 450 Results )
+                        </p>
+                    </div>
+                    <div class="search d-flex gap-3">
+                        <form action="" class="position-relative d-flex gap-3" id="search-list">
+                            <div>
+                                <input type="text" class="form-control form-custom ps-3" style="width: 320px;"
+                                    placeholder="Search...">
+                                <a href="#" class="btn btn-danger search-icon"
+                                    style="right: 0;
+                                        padding: 10px 18px;
+                                        margin-top: 0px;
+                                        border-top-left-radius: 0px !important;border-bottom-left-radius: 0px !important;border-radius: 16px;"><i
+                                        class="fa fa-search"></i></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-5">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-7">
+                        <div class="card br-16" style="height: 380px;">
+                            <div class="member-cover w-100">
+                                <img src="../../assets/images/bg.png" alt="" class="w-100 h-160px">
+                            </div>
+                            <div class="member-profile text-center pb-5">
+                                <img src="../../assets/images/avtar/2.jpg" alt="" class="rounded-circle mb-2"
+                                    width="100" height="100">
+                                <h5 class="mb-0 fs-18 fw-600 pb-2">Annette Black</h5>
+                                <p class="badge mb-0 custom-badge br-16">Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-7">
+                        <div class="card br-16" style="height: 380px;">
+                            <div class="member-cover w-100">
+                                <img src="../../assets/images/bg.png" alt="" class="w-100 h-160px">
+                            </div>
+                            <div class="member-profile text-center pb-5">
+                                <img src="../../assets/images/avtar/2.jpg" alt="" class="rounded-circle mb-2"
+                                    width="100" height="100">
+                                <h5 class="mb-0 fs-18 fw-600 pb-2">Annette Black</h5>
+                            </div>
+                            <div class="modal-footer justify-content-center py-3 border-top"
+                                style="    margin-top: auto;">
+                                <div class="dropdown">
+                                    <a href="#" class="mb-0 fs-14 fw-600  dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style="color: #DC2F3D;"><img
+                                            src="../../assets/images/icons/setting.png" alt=""> Manage</a>
+                                    <ul class="dropdown-menu border-0 py-0 shadow">
+                                        <!-- <li><a href="#" class="dropdown-item " style="padding: 12px;"
+                                                    type="button">Transfer
+                                                    Ownership</a></li> -->
+                                        <li><a href="#" class="dropdown-item" style="padding: 12px;"
+                                                type="button">Remove</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>websiteFooter}} {{{body}}}

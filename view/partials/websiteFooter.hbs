@@ -1,0 +1,105 @@
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-contact text-white d-flex align-items-center justify-content-between flex-wrap">
+                    <div>
+                        <h3 class="mb-0">God Has Gifted You With Spiritual Gifts That Build Up The Body of
+                            Christ.
+                        </h3>
+                        <p class="mb-0">Click The Button In the Area And Volunteer or Donate.
+                        </p>
+                    </div>
+                    <a href="/website/contact" class="btn btn-custom mt-0">Contact Us</a>
+                </div>
+                <hr class="line">
+                <div class="row customize-links">
+                    <div class="col-lg-3">
+                        <img src="../../assets/images/logo.png" alt="" class="mb-30" width="80">
+                        <h4 class="footer-h4 fs-20 text-white ">Newsletter</h4>
+                        <p class="text-white-50 fs-16 mb-30">Lorem Ipsum is simply dummy
+                            text of the printing and typesetting industry. Lorem Ipsum.</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Email*"
+                                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                <button class="btn btn-danger" type="button" id="button-addon1">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4 class="footer-h4 text-white">Links</h4>
+                        <ul class="list-style-none">
+                            <li><a href="/website/dashboard">Home</a></li>
+                            <li><a href="/website/about">About us</a></li>
+                            <li><a href="/webAdmin/prayers">Prayers</a></li>
+                            <li><a href="/website/prayerCircle">Prayer Circle</a></li>
+                            <li><a href="/website/publicSquare">Public Square</a></li>
+                            <li><a href="/website/originalPrayer">PQ Originals</a></li>
+                            <li><a href="/website/inspiration">Inspirational Quotes</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4 class="footer-h4 text-white">Legal</h4>
+                        <ul class="list-style-none">
+                            <li><a href="/website/privacy">Privacy Policy</a></li>
+                            <li><a href="/website/terms">Terms of Service</a></li>
+                            <li><a href="/website/works">Terms of Use</a></li>
+                            <li><a href="/website/faqs">Faqs</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4 class="footer-h4 text-white">Available on</h4>
+                        <div class="socials d-flex justify-content-start">
+                            <a href="#">
+                                <div class="app-store">
+                                    <img src="../../assets/images/appstore.svg" alt="" width="100">
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="app-store">
+                                    <img src="../../assets/images/gstore.svg" alt="" width="100">
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <hr class="line">
+                <div class="copyright py-4 d-flex justify-content-between align-items-center flex-wrap">
+                    <p class="mb-0">Copyright
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>. All rights reserved
+                    </p>
+                    <div class="socials-images mt-0">
+                        <a href="#">
+                            <img src="../../assets/images/icons/facebook.png" alt=""></a>
+                        <a href="#"> <img src="../../assets/images/icons/twitter.png" alt=""></a>
+                        <a href="#"><img src="../../assets/images/icons/reddit.png" alt=""></a>
+                        <a href="#"> <img src="../../assets/images/icons/youtube.png" alt=""></a>
+                        <a href="#"> <img src="../../assets/images/icons/instagram.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../../assets/js/jquery.js"></script>
+<script src="../../assets/js/bundle.js"></script>
+<script src="../../assets/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+{{#if successToast}}
+<script>
+    toastr.success('{{successToast}}');
+</script>
+{{/if}}
+{{#if errorToast}}
+<script>
+    toastr.error('{{errorToast}}');
+</script>
+{{/if}}
+</body>
+
+</html>

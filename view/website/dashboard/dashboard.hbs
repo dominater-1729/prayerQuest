@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css"
+        integrity="sha512-oe8OpYjBaDWPt2VmSFR+qYOdnTjeV9QPLJUeqZyprDEQvQLJ9C5PCFclxwNuvb/GQgQngdCXzKSFltuHD3eCxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!-- <style>
+.hero-details {
+    margin-top: 200px;
+}
+</style> -->
+
+<body>
+    <div class="loader-wrapper ">
+        <div class="loader d-flex justify-content-center align-items-center">
+            <div class="ball-scale-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="give-donations">
+        <a href="/website/donate" class="btn-donation">
+            <img src="../assets/images/donate.png" class="img-fluid me-1" alt=""> Give
+        </a>
+    </div>
+    <header id="navbar">
+        <nav class="navbar navbar-expand-lg mt-2">
+            <div class="container custom-container">
+                <a class="navbar-brand" href="../pages/index.html" style="color: #fff;">
+                    <img src="../assets/images/logo.png" alt=""></a>
+                <div class="d-flex gap-3">
+                    <div class="mobile-header" id="mobile-header">
+                        <form class="d-flex align-items-center gap-3" role="search">
+                            <div class="position-relative" id="notify-drop">
+                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false" class="" id="notificationss"
+                                    style="cursor: pointer;">
+                                    <div class="notification">
+                                        <img src="../assets/images/Notification.png" alt="">
+                                    </div>
+                                </a>
+                                <div class="dot"></div>
+                                <div class="dropdown-custom dropdown-menu py-0">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="profile">
+                                                <div class="info">
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                                                        <h5 class="mb-0">Notifications</h5>
+                                                        <a href="#" class="clear-all">Clear all</a>
+                                                    </div>
+                                                    <div class="options  mt-2">
+                                                        <ul class="opt ps-0 scrollbar-container" id="scrollar">
+                                                            <li class="drop-li">
+                                                                <a href="#" class="d-flex align-items-center gap-3">
+                                                                    <div>
+                                                                        <img src="../assets/images/avtar/2.jpg"
+                                                                            width="40" alt="" height="40"
+                                                                            class="rounded-2">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="mb-0"
+                                                                            style="font-size: 13px;line-height: 16px;font-weight: 500;">
+                                                                            New
+                                                                            Publication uploaded on XYZ
+                                                                            Channel</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="#" class="d-flex align-items-center gap-3">
+                                                                    <div>
+                                                                        <img src="../assets/images/avtar/2.jpg"
+                                                                            width="40" alt="" height="40"
+                                                                            class="rounded-2">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="mb-0"
+                                                                            style="font-size: 13px;line-height: 16px;font-weight: 500;">
+                                                                            New
+                                                                            Publication uploaded on XYZ
+                                                                            Channel</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/website/donate">
+                                <div class="give mygive">
+                                    <p class="mb-0">Give</p>
+                                </div>
+                            </a>
+                            <div class="position-relative" id="profile-detailss" style="cursor: pointer;">
+                                <a href="#" class="give d-flex align-items-center" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="../assets/images/avtar/2.jpg" alt="" style="border-radius: 10px;"
+                                        width="35" height="35">
+                                    <span class="text-white ms-2"><i class="fa-solid fa-angle-down"></i></span>
+                                </a>
+                                <div class="dropdown-custom py-0 dropdown-menu">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="profile">
+                                                <div class="profile-image d-flex gap-2 align-items-center">
+                                                    <img src="../assets/images/avtar/2.jpg" alt="" width="70"
+                                                        height="70" class="rounded-circle">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="username">Jone Doe</span>
+                                                        <a href="/website/profile" class="view-profile">View
+                                                            Profile</a>
+                                                    </div>
+                                                </div>
+                                                <hr style="border: 1px solid #F0F8FF;">
+                                                <div class="info">
+                                                    <h6>Platform analytics</h6>
+                                                    <div class="count-circle mt-15 flex-nowrap px-0">
+                                                        <div class="circle-history">
+                                                            <h5>140</h5>
+                                                            <h6>People Online</h6>
+                                                        </div>
+                                                        <div class="circle-history">
+                                                            <h5>14</h5>
+                                                            <h6>Total Groups</h6>
+                                                        </div>
+                                                        <div class="circle-history">
+                                                            <h5>200K</h5>
+                                                            <h6>People Praying</h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="options mt-2">
+                                                        <ul class="opt ps-0">
+                                                            <li class="drop-li">
+                                                                <a href="/website/prayers"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../assets/images/icons/folded.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Prayers</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="../pages/video/video.html"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../assets/images/icons/play-button.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Video</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="drop-li">
+                                                                <a href="/website/favorite"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../assets/images/icons/bookmark.svg"
+                                                                            id="bookmark" alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Favourite</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="/website/membership"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../assets/images/icons/membership-card.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Membership</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="drop-li noty-toggle position-relative">
+                                                                <a href="#" class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../assets/images/icons/notification.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex justify-content-between align-items-center">
+                                                                        <span>Notifications</span>
+                                                                    </div>
+                                                                </a>
+                                                                <div class="form-check form-switch" style="position: absolute;
+                                                                        right: 0;
+                                                                        top: 9px;">
+                                                                    <input class=" form-check-input" type="checkbox"
+                                                                        role="switch" id="flexSwitchCheckDefault1">
+                                                                    <label class="form-check-label"
+                                                                        for="flexSwitchCheckDefault1"></label>
+                                                                </div>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="../pages/account/changepassword.html"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../assets/images/icons/key.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Change Password</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="/website/logout"
+                                                                    class="d-flex align-items-center gap-3 justify-content-center">
+                                                                    <div class="icon">
+                                                                        <img src="../assets/images/icons/logout.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Logout</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                        role="button" aria-controls="offcanvasExample">
+                        <i class="fa-solid fa-bars" style="color: #fff;"></i>
+                    </button>
+                </div>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title navbar-brand" id="offcanvasExampleLabel">
+                            <img src="../assets/images/logo.png" alt="">
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="collapse navbar-collapse show" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/website/dashboard">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/website/about">About Us</a>
+                                </li>
+                                <li class="nav-item hover-drop">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a class="nav-link " href="/website/prayers">Prayers</a>
+                                        <span class="prayer-dropicon"><i
+                                                class="fa fas fa-angle-right text-white"></i></span>
+                                    </div>
+                                    <!-- <a class="nav-link hover-drop" data-bs-toggle="dropdown"
+                                        aria-expanded="false" href="#">Prayers</a> -->
+                                    <div class="dropdown-custom  py-0 " style="left: 50% !important; transform: translateX(-50%);    width: 100%;
+                                max-width: 1024px;">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="profile">
+                                                    <div class="info">
+                                                        <div class="options prayer-filter  mt-2">
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <ul class="opt">
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for a Miracle
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Anxiety
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Encouragement
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Faith
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Forgiveness
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Friends
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Gratitude
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for healing/Healing Prayer
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Health
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <ul class="opt">
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Hope and Courage
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Humility
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Kindness
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for marriage
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for My Children
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for my Husband
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for my Wife
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Peace
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Others
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <ul class="opt">
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Protection
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Responsibility
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Restoration
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for School
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Sick Friend
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Someone in Need
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for the ability to Forgive
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers before Surgery
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for your Neighbors
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <ul class="opt">
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for the Nation
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer to Heal a Broken Heart
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers before Bed
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers for Family Unity
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers for Financial Blessings
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers that Heal
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="/website/prayerMiracle"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Strength Prayers
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/website/prayerCircle">Prayer Circle</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/website/publicSquare">Public Square</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/website/originalPrayer">PQ Originals</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/website/inspiration">Inspirational
+                                        Quotes</a>
+                                </li>
+
+                            </ul>
+                            <form role="search" id="web-screen">
+                                <div class="d-flex align-items-center gap-3 ">
+                                    <div class="position-relative" id="notify-drop">
+                                        <a href="#" data-bs-toggle="dropdown" aria-expanded="false" class=""
+                                            id="notificationss" style="cursor: pointer;">
+                                            <div class="notification">
+                                                <img src="../assets/images/Notification.png" alt="">
+                                            </div>
+                                        </a>
+                                        <div class="dot"></div>
+                                        <div class="dropdown-custom dropdown-menu py-0">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="profile">
+                                                        <div class="info">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                                                                <h5 class="mb-0">Notifications</h5>
+                                                                <a href="#" class="clear-all">Clear all</a>
+                                                            </div>
+                                                            <div class="options  mt-2">
+                                                                <ul class="opt ps-0 scrollbar-container" id="scrollar">
+                                                                    <li class="drop-li">
+                                                                        <a href="#"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div>
+                                                                                <img src="../assets/images/avtar/2.jpg"
+                                                                                    width="40" alt="" height="40"
+                                                                                    class="rounded-2">
+                                                                            </div>
+                                                                            <div>
+                                                                                <p class="mb-0"
+                                                                                    style="font-size: 13px;line-height: 16px;font-weight: 500;">
+                                                                                    New
+                                                                                    Publication uploaded on XYZ
+                                                                                    Channel</p>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="#"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div>
+                                                                                <img src="../assets/images/avtar/2.jpg"
+                                                                                    width="40" alt="" height="40"
+                                                                                    class="rounded-2">
+                                                                            </div>
+                                                                            <div>
+                                                                                <p class="mb-0"
+                                                                                    style="font-size: 13px;line-height: 16px;font-weight: 500;">
+                                                                                    New
+                                                                                    Publication uploaded on XYZ
+                                                                                    Channel</p>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/website/donate">
+                                        <div class="give mygive">
+                                            <p class="mb-0">Give</p>
+                                        </div>
+                                    </a>
+                                    <div class="position-relative" id="profile-detailss" style="cursor: pointer;">
+                                        <a href="#" class="give d-flex align-items-center" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <img src="../assets/images/avtar/2.jpg" alt="" style="border-radius: 10px;"
+                                                width="35" height="35">
+                                            <span class="text-white ms-2 text-username" style="font-size: 14px;">Chloe
+                                                deker</span>
+                                            <span class="text-white ms-2 text-arrow"><i
+                                                    class="fa-solid fa-angle-down"></i></span>
+                                        </a>
+                                        <div class="dropdown-custom py-0 dropdown-menu">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="profile">
+                                                        <div class="profile-image d-flex gap-2 align-items-center">
+                                                            <img src="../assets/images/avtar/2.jpg" alt="" width="70"
+                                                                height="70" class="rounded-circle">
+                                                            <div class="d-flex flex-column">
+                                                                <span class="username">Jone Doe</span>
+                                                                <a href="/website/profile" class="view-profile">View
+                                                                    Profile</a>
+                                                            </div>
+                                                        </div>
+                                                        <hr style="border: 1px solid #F0F8FF;">
+                                                        <div class="info">
+                                                            <h6>Platform analytics</h6>
+                                                            <div class="count-circle mt-15 flex-nowrap px-0">
+                                                                <div class="circle-history">
+                                                                    <h5>140</h5>
+                                                                    <h6>People Online</h6>
+                                                                </div>
+                                                                <div class="circle-history">
+                                                                    <h5>14</h5>
+                                                                    <h6>Total Groups</h6>
+                                                                </div>
+                                                                <div class="circle-history">
+                                                                    <h5>200K</h5>
+                                                                    <h6>People Praying</h6>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="options mt-2">
+                                                                <ul class="opt ps-0">
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/prayers"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../assets/images/icons/folded.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Prayers</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/videos"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../assets/images/icons/play-button.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Video</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/favorite"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../assets/images/icons/bookmark.svg"
+                                                                                    id="bookmark" alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Favourite</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/membership"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../assets/images/icons/membership-card.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Membership</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+
+                                                                    <li class="drop-li noty-toggle position-relative">
+                                                                        <a href="#"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../assets/images/icons/notification.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div
+                                                                                class="d-flex justify-content-between align-items-center">
+                                                                                <span>Notifications</span>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="form-check form-switch" style="position: absolute;
+                                                                        right: 0;
+                                                                        top: 9px;">
+                                                                            <input class=" form-check-input"
+                                                                                type="checkbox" role="switch"
+                                                                                id="flexSwitchCheckDefault2">
+                                                                            <label class="form-check-label"
+                                                                                for="flexSwitchCheckDefault2"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/changePass"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../assets/images/icons/key.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Change Password</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/logout"
+                                                                            class="d-flex align-items-center gap-3 justify-content-center">
+                                                                            <div class="icon">
+                                                                                <img src="../assets/images/icons/logout.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Logout</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <div class="container">
+            <div class="heros">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-details text-center">
+                            <h1 class="text-white text-start d-flex justify-content-center mb-4">Uplift each other by
+                                sharing
+                                inspirational content,<br>
+                                through videos, music, images or written uploads.</h1>
+                            <h6 class="text-white pt-5">Available On</h6>
+                            <div class="socials d-flex">
+                                <a href="#">
+                                    <div class="app-store">
+                                        <img src="../assets/images/appstore.svg" alt="">
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="app-store">
+                                        <img src="../assets/images/gstore.svg" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="PrayerQuest" style="padding-bottom: 80px;">
+        <div class="left-flower">
+            <img src="../assets/images/left.png" class="img-fluid" alt="">
+        </div>
+        <div class="right-flower">
+            <img src="../assets/images/right.png" class="img-fluid" alt="">
+        </div>
+        <div class="container">
+            <!-- <section class="testimonials  pt-5 pb-5 position-relative" id="testimonials">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="quotes">
+                                <p class="mb-0 text-white">Thank you for dying on the cross for my sins. Please
+                                    forgive me for
+                                    all the things | have
+                                    done that | know are wrong. Now | know the truth about what you did for me.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="videos-details position-relative mb-5 ">
+                        <div class="container mobile-changes">
+                            <a href="/website/inspiration">
+                                <h1 class="main-heading" style="font-size: 32px;font-weight: 500 !important;">
+                                    Inspirational quote of the day</h1>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-7">
+                                        <div class="">
+                                            <svg width="32" viewBox="0 0 43 32" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M32.0842 31.5C26.2281 31.5 22.0008 26.6654 22.001 19.507C22.0385 9.10626 29.8572 1.75263 41.137 0.340437C42.1834 0.209419 42.5869 1.65909 41.6233 2.08759C37.2952 4.01212 35.1092 6.45425 34.8269 8.87147C34.6159 10.6774 35.5977 12.2594 36.8304 12.5556C40.0263 13.3236 42.1675 17.3034 42.1675 21.4167C42.1675 26.9855 37.653 31.5 32.0842 31.5Z"
+                                                    fill="white" />
+                                                <path
+                                                    d="M10.0842 31.5C4.22811 31.5 0.000822067 26.6654 0.000963211 19.507C0.0384674 9.10626 7.85724 1.75263 19.137 0.340437C20.1834 0.209419 20.5869 1.65909 19.6233 2.08759C15.2952 4.01212 13.1092 6.45425 12.8269 8.87147C12.6159 10.6774 13.5977 12.2594 14.8304 12.5556C18.0263 13.3236 20.1675 17.3034 20.1675 21.4167C20.1675 26.9855 15.653 31.5 10.0842 31.5Z"
+                                                    fill="white" />
+                                            </svg>
+
+                                            <p class="mb-0 text-white text-center" style="max-width: 90%;
+                                        margin: auto;">Thank you Jesus that you care about me at
+                                                all times. | am not alone when you are with me. Even though | can’t see
+                                                you,
+                                                | know that you are there. | love you Jesus. You are my Savior! Amen.
+                                            <div
+                                                class="d-flex gap-2 text-nowrap justify-content-center align-items-center mt-4 mobile-responsive">
+                                                <a href="#" class="btn btn-applied btn-sm text-nowrap br-16" style="width: 100px; padding: 5px;   background: transparent;
+                                                    border: 1px solid #e6e6e6;">
+                                                    <div>
+                                                        <div class="circle-watching"
+                                                            style="justify-content: center !important;gap: 9px;">
+                                                            <div href="#">
+                                                                <div class="view-circle">
+                                                                    <h5 class="mb-0">
+                                                                        <i class="fa fas far fa-thumbs-up"></i>
+                                                                    </h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="seprter"
+                                                                style="background-color: #e6e6e6 !important;width: 1px !important;">
+                                                            </div>
+                                                            <div href="#">
+                                                                <div class="view-circle">
+                                                                    <h5 class="mb-0">
+                                                                        2K
+                                                                    </h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </a>
+                                                <a href="#" class="btn btn-applied btn-sm text-nowrap br-16" style="    background: transparent;
+                                                border: 1px solid #e6e6e6;"><i class="fa fas fas fa-share"></i></a>
+
+                                            </div>
+                                            <div class="text-end">
+                                                <svg width="32" viewBox="0 0 43 32" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M10.9158 0.5C16.7719 0.5 20.9992 5.33459 20.999 12.493C20.9615 22.8937 13.1428 30.2474 1.86305 31.6596C0.816564 31.7906 0.413052 30.3409 1.37673 29.9124C5.70485 27.9879 7.89077 25.5458 8.17311 23.1285C8.38406 21.3226 7.40232 19.7406 6.16958 19.4444C2.97374 18.6764 0.832507 14.6966 0.832507 10.5833C0.832507 5.01446 5.34697 0.5 10.9158 0.5Z"
+                                                        fill="white" />
+                                                    <path
+                                                        d="M32.9158 0.5C38.7719 0.5 42.9992 5.33459 42.999 12.493C42.9615 22.8937 35.1428 30.2474 23.863 31.6596C22.8166 31.7906 22.4131 30.3409 23.3767 29.9124C27.7048 27.9879 29.8908 25.5458 30.1731 23.1285C30.3841 21.3226 29.4023 19.7406 28.1696 19.4444C24.9737 18.6764 22.8325 14.6966 22.8325 10.5833C22.8325 5.01446 27.347 0.5 32.9158 0.5Z"
+                                                        fill="white" />
+                                                </svg>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="video-thumbnail text-center mt-2">
+                            <video src="../assets/videos/prayer.mp4" controls=""
+                                style="border-radius: 16px;width: 95%;"></video>
+                        </div>
+                    </div>
+                    <div class="content-PrayerQuest">
+                        <h1 class="main-heading">PrayerQuest – A platform for inspirational content</h1>
+                        <p class="mb-4 main-para">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry.
+                            Lorem
+                            Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        <div class="prayer-categories">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 col-sm-6 mb-7">
+                                    <a href="/website/prayerMiracle">
+                                        <div class="myprayer position-relative">
+                                            <img src="../assets/images/prayerbg-1.png" alt="">
+                                            <div class="overlay"></div>
+                                            <div class="allprayer-details">
+                                                <h3 class="mb-0">Prayer for Miracle</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 mb-7">
+                                    <a href="/website/prayerMiracle">
+                                        <div class="myprayer position-relative">
+                                            <img src="../assets/images/prayerbg-2.png" alt="">
+                                            <div class="overlay"></div>
+                                            <div class="allprayer-details">
+                                                <h3 class="mb-0">Prayer for Faith</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 mb-7">
+                                    <a href="/website/prayerMiracle">
+                                        <div class="myprayer position-relative">
+                                            <img src="../assets/images/prayerbg-3.png" alt="">
+                                            <div class="overlay"></div>
+                                            <div class="allprayer-details">
+                                                <h3 class="mb-0">Prayer for Gratitude</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 mb-7">
+                                    <a href="/website/prayerMiracle">
+                                        <div class="myprayer position-relative">
+                                            <img src="../assets/images/prayerbg-4.png" alt="">
+                                            <div class="overlay"></div>
+                                            <div class="allprayer-details">
+                                                <h3 class="mb-0">Prayer for Anxiety</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 mb-7">
+                                    <a href="/website/prayerMiracle">
+                                        <div class="myprayer position-relative">
+                                            <img src="../assets/images/prayerbg-5.png" alt="">
+                                            <div class="overlay"></div>
+                                            <div class="allprayer-details">
+                                                <h3 class="mb-0">Prayer for Forgiveness</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 mb-7">
+                                    <a href="/website/prayerMiracle">
+                                        <div class="myprayer position-relative">
+                                            <img src="../assets/images/prayerbg-6.png" alt="">
+                                            <div class="overlay"></div>
+                                            <div class="allprayer-details">
+                                                <h3 class="mb-0">Prayer for Healing</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 mb-7">
+                                    <a href="/website/prayerMiracle">
+                                        <div class="myprayer position-relative">
+                                            <img src="../assets/images/prayerbg-7.png" alt="">
+                                            <div class="overlay"></div>
+                                            <div class="allprayer-details">
+                                                <h3 class="mb-0">Prayer for Encouragement</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 mb-7">
+                                    <a href="/website/prayerMiracle">
+                                        <div class="myprayer position-relative">
+                                            <img src="../assets/images/prayerbg-8.png" alt="">
+                                            <div class="overlay"></div>
+                                            <div class="allprayer-details">
+                                                <h3 class="mb-0">Prayer for Friends</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="view-category text-center">
+                                <a href="/website/prayers" class="btn btn-custom">View All Categories</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="prayer-circle p-80  position-relative">
+        <div class="container">
+            <div class="rotate-flower">
+                <img src="../assets/images/rotate.png" class="img-fluid" alt="">
+            </div>
+            <h1 class="main-heading">Prayer Circle</h1>
+            <p class="mb-4 main-para">The Prayer Circle gives you the ability to share inspirational content that is
+                only viewable by
+                group members </p>
+            <div class="row">
+                <div class="col-lg-4 mb-7">
+                    <div class="circle-video videos-div position-relative">
+                        <video src="../assets/videos/prayer.mp4" class="mb-10px" controls width="100%"></video>
+                  
+                    </div>
+                    <div class="circle-details ">
+                        <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
+                            Posted 14
+                            Mins ago</p>
+                        <div class="joint">
+                            <div>
+                                <a href="/website/prayerCircle">
+                                    <h4 class="mb-0">TEST GROUP/CIRCLE 9</h4>
+                                </a>
+                                <p class="mb-0 paragraph"><b>1.8K</b> <span class="text-graish">Members</span> •
+                                    <b>40+</b> <span class="text-graish">Prayer</span>
+                                </p>
+
+                            </div>
+                            <div>
+                                <a href="" class="btn btn-outline-custom">Join</a>
+                            </div>
+                        </div>
+
+                        <p class="text-graish mt-15 para"> Test Managers 1Test Managers 1Test Managers 1Test
+                            Managers
+                            1Test Managers...
+                            <a href="/website/prayerCircle" class="read-mode">Read
+                                More</a>
+                        </p>
+
+                        <div class="count-circle mt-15">
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I am praying now</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I already prayed</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/bible.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I will pray later</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-7">
+                    <div class="circle-video videos-div position-relative">
+                        <!-- <video src="../assets/videos/prayer.mp4" class="mb-10px" controls width="100%"></video> -->
+                        <img src="../assets/images/static.png" class="mb-10px" alt="">
+                        <!-- <div class="overlay"></div>
+                            <div class="video-play-icon">
+                                <a href="#">
+                                    <img src="../assets/images/play-icon.png" width="70" height="70" alt="">
+                                </a>
+                            </div> -->
+                    </div>
+                    <div class="circle-details mt-2">
+                        <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
+                            Posted 14
+                            Mins ago</p>
+                        <div class="joint">
+                            <div>
+                                <a href="/website/prayerCircle">
+                                    <h4 class="mb-0">TEST GROUP/CIRCLE 9</h4>
+                                </a>
+                                <p class="mb-0 paragraph"><b>1.8K</b> <span class="text-graish">Members</span> •
+                                    <b>40+</b> <span class="text-graish">Prayer</span>
+                                </p>
+
+                            </div>
+                            <div>
+                                <a href="" class="btn btn-outline-custom">Join</a>
+                            </div>
+                        </div>
+
+                        <p class="text-graish mt-15 para"> Test Managers 1Test Managers 1Test Managers 1Test
+                            Managers
+                            1Test Managers...
+                            <a href="/website/prayerCircle" class="read-mode">Read
+                                More</a>
+                        </p>
+
+                        <div class="count-circle mt-15">
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I am praying now</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I already prayed</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/bible.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I will pray later</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="circle-view text-center">
+                <a href="/website/prayerCircle" class="btn btn-custom">View All Groups</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="prayer-circle bg-white p-80 position-relative" id="public-sequare">
+        <div class="container">
+            <h1 class="main-heading">Public Square</h1>
+            <p class="mb-4 main-para">The Public Square allows all members to share/request inspirational content </p>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 mb-7">
+                    <a href="#">
+                        <div class="user-details d-flex align-items-center gap-2">
+                            <div class="user-img">
+                                <img src="../assets/images/avtar/1.jpg" alt="">
+                            </div>
+                            <div class="user-share d-flex align-items-center gap-2">
+                                <p class="mb-0">by <b>Robert Fox</b></p>
+                                <h5><img src="../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up text-graish"
+                                        style="font-weight: 500;font-size: 14px;">6k</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="circle-video position-relative mb-10px">
+                        <img src="../assets/images/circle-video.png" alt="">
+                        <div class="overlay"></div>
+                        <div class="video-play-icon">
+                            <a href="/website/publicSquare">
+                                <img src="../assets/images/play-icon.png" width="70" height="70" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="circle-details">
+                        <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
+                            Posted 14
+                            Mins ago</p>
+                        <div class="socials-images">
+                            <img src="../assets/images/icons/facebook.png" alt="">
+                            <img src="../assets/images/icons/twitter.png" alt="">
+                            <img src="../assets/images/icons/reddit.png" alt="">
+                            <img src="../assets/images/icons/youtube.png" alt="">
+                            <img src="../assets/images/icons/instagram.png" alt="">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap mb-10px  mt-15 pe-2">
+                            <a href="/website/publicSquare">
+                                <h4 class="mb-0" style="margin-bottom: 0 !important;">Test</h4>
+                            </a>
+                            <a href="#"><i class="fa-regular fa-bookmark fs-18"></i></a>
+                        </div>
+                        <p class="text-graish mt-15 para"> Test Managers 1Test Managers 1Test Managers 1Test
+                            Managers
+                            1Test Managers...
+                            <a href="/website/publicSquare" class="read-mode">Read
+                                More</a>
+                        </p>
+                        <div class="circle-watching">
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa fa-eye"></i>
+                                        2K
+                                    </h5>
+                                </div>
+                            </a>
+                            <div class="seprter"></div>
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        2K
+                                    </h5>
+                                </div>
+                            </a>
+                            <div class="seprter"></div>
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa-solid fa-share"></i>
+                                        100
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="count-circle mt-15" style="background-color: #F0F8FF;">
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I am praying now</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I already prayed</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/bible.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I will pray later</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 mb-7">
+                    <a href="#">
+                        <div class="user-details d-flex align-items-center gap-2">
+                            <div class="user-img">
+                                <img src="../assets/images/avtar/1.jpg" alt="">
+                            </div>
+                            <div class="user-share d-flex align-items-center gap-2">
+                                <p class="mb-0">by <b>Robert Fox</b></p>
+                                <h5><img src="../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up text-graish"
+                                        style="font-weight: 500;font-size: 14px;">6k</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="circle-video position-relative mb-10px">
+                        <img src="../assets/images/static.png" alt="">
+                        <div class="overlay"></div>
+                        <div class="video-play-icon">
+                            <a href="/website/publicSquare">
+                                <img src="../assets/images/play-icon.png" width="70" height="70" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="circle-details mt-2">
+                        <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
+                            Posted 14
+                            Mins ago</p>
+                        <div class="socials-images">
+                            <img src="../assets/images/icons/facebook.png" alt="">
+                            <img src="../assets/images/icons/twitter.png" alt="">
+                            <img src="../assets/images/icons/reddit.png" alt="">
+                            <img src="../assets/images/icons/youtube.png" alt="">
+                            <img src="../assets/images/icons/instagram.png" alt="">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap mb-10px  mt-15 pe-2">
+                            <a href="/website/publicSquare">
+                                <h4 class="mb-0" style="margin-bottom: 0 !important;">Test</h4>
+                            </a>
+                            <a href="#"><i class="fa-regular fa-bookmark fs-18"></i></a>
+                        </div>
+                        <p class="text-graish mt-15 para"> Test Managers 1Test Managers 1Test Managers 1Test
+                            Managers
+                            1Test Managers...
+                            <a href="/website/publicSquare" class="read-mode">Read
+                                More</a>
+                        </p>
+                        <div class="circle-watching">
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa fa-eye"></i>
+                                        2K
+                                    </h5>
+                                </div>
+                            </a>
+                            <div class="seprter"></div>
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        2K
+                                    </h5>
+                                </div>
+                            </a>
+                            <div class="seprter"></div>
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa-solid fa-share"></i>
+                                        100
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="count-circle mt-15" style="background-color: #F0F8FF;">
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I am praying now</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I already prayed</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../assets/images/icons/bible.svg" alt="" class="img-fluid me-1"> <span
+                                        class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                                <h6>I will pray later</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="circle-view text-center">
+                <a href="/website/publicSquare" class="btn btn-custom">View All Groups</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="prayer-circle p-80 position-relative" id="Prayers">
+        <div class="container">
+            <h1 class="main-heading">PrayerQuest Originals</h1>
+            <!-- <p class="mb-4 main-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 mb-7">
+                    <div class="circle-video position-relative mb-10px">
+                        <img src="../assets/images/circle-video.png" alt="">
+                        <div class="overlay"></div>
+                        <div class="video-play-icon">
+                            <a href="#">
+                                <img src="../assets/images/play-icon.png" width="70" height="70" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="circle-details">
+                        <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
+                            Posted on December 22, 2023 </p>
+                        <div class="language">
+                            <p class="mb-0 languages-badge bg-dark">Hindi</p>
+                            <p class="mb-0 languages-badge bg-danger">English</p>
+                        </div>
+                        <div class="joint mt-15">
+                            <div>
+
+                                <div class="d-flex justify-content-between align-items-center flex-wrap mb-10px">
+                                    <a href="/website/originalPrayer">
+                                        <h4 class="mb-0" style="margin-bottom: 0 !important;">New A & V Testing2</h4>
+                                    </a>
+                                    <a href="#"><i class="fa-regular fa-bookmark fs-18"></i></a>
+                                </div>
+                                <p class="mb-0 text-graish para"> Test Managers 1Test Managers 1Test Managers 1Test
+                                    Managers
+                                    1Test Managers...
+                                    <a href="../pages/Originals/orignal.html" class="read-mode">Read
+                                        More</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="count-circle d-block">
+                            <div class="circle-watching justify-content-between">
+                                <a href="#">
+                                    <div class="view-circle">
+                                        <h5 class="mb-0">
+                                            <i class="fa fa-eye"></i>
+                                            2K
+                                        </h5>
+                                    </div>
+                                </a>
+                                <div class="seprter"></div>
+                                <a href="#">
+                                    <div class="view-circle">
+                                        <h5 class="mb-0">
+                                            <i class="fa-solid fa-thumbs-up"></i>
+                                            2K
+                                        </h5>
+                                    </div>
+                                </a>
+                                <div class="seprter"></div>
+                                <a href="#">
+                                    <div class="view-circle">
+                                        <h5 class="mb-0">
+                                            <i class="fa-solid fa-share"></i>
+                                            100
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="circle-view text-center">
+                <a href="/website/originalPlayer" class="btn btn-custom">View All Prayers</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-contact text-white d-flex align-items-center justify-content-between flex-wrap">
+                        <div>
+                            <h3 class="mb-0">God Has Gifted You With Spiritual Gifts That Build Up The Body of
+                                Christ.
+                            </h3>
+                            <p class="mb-0">Click The Button In the Area And Volunteer or Donate.
+                            </p>
+                        </div>
+                        <a href="/website/contact" class="btn btn-custom mt-0">Contact Us</a>
+                    </div>
+
+                    <hr class="line">
+                    <div class="row customize-links">
+                        <div class="col-lg-3">
+                            <img src="../assets/images/logo.png" alt="" class="mb-30" width="80">
+                            <h4 class="footer-h4 fs-20 text-white ">Newsletter</h4>
+                            <p class="text-white-50 fs-16 mb-30">Lorem Ipsum is simply dummy
+                                text of the printing and typesetting industry. Lorem Ipsum.</p>
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Email*"
+                                        aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                    <button class="btn btn-danger" type="button" id="button-addon1">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-3">
+                            <h4 class="footer-h4 text-white">Links</h4>
+                            <ul class="list-style-none">
+                                <li><a href="/website/dashboard">Home</a></li>
+                                <li><a href="/website/about">About us</a></li>
+                                <li><a href="/website/prayers">Prayers</a></li>
+                                <li><a href="/website/prayerCircle">Prayer Circle</a></li>
+                                <li><a href="/website/publicSquare">Public Square</a></li>
+                                <li><a href="/website/originalPrayer">PQ Originals</a></li>
+                                <li><a href="/website/inspiration">Inspirational Quotes</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3">
+                            <h4 class="footer-h4 text-white">Legal</h4>
+                            <ul class="list-style-none">
+                                <li><a href="/website/privacy">Privacy Policy</a></li>
+                                <li><a href="/website/terms">Terms of Service</a></li>
+                                <li><a href="/website/works">Terms of Use</a></li>
+                                <li><a href="/website/faqs">Faqs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3">
+                            <h4 class="footer-h4 text-white">Available on</h4>
+                            <div class="socials d-flex justify-content-start">
+                                <a href="#">
+                                    <div class="app-store">
+                                        <img src="../assets/images/appstore.svg" alt="" width="100">
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="app-store">
+                                        <img src="../assets/images/gstore.svg" alt="" width="100">
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr class="line">
+                    <div class="copyright py-4 d-flex justify-content-between align-items-center flex-wrap">
+                        <p class="mb-0">Copyright
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>. All rights reserved
+                        </p>
+                        <div class="socials-images mt-0">
+                            <a href="#">
+                                <img src="../assets/images/icons/facebook.png" alt=""></a>
+                            <a href="#"> <img src="../assets/images/icons/twitter.png" alt=""></a>
+                            <a href="#"><img src="../assets/images/icons/reddit.png" alt=""></a>
+                            <a href="#"> <img src="../assets/images/icons/youtube.png" alt=""></a>
+                            <a href="#"> <img src="../assets/images/icons/instagram.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bundle.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    {{#if successToast}}
+    <script>
+        toastr.success('{{successToast}}');
+    </script>
+    {{/if}}
+    {{#if errorToast}}
+    <script>
+        toastr.error('{{errorToast}}');
+    </script>
+    {{/if}}
+</body>
+
+</html>

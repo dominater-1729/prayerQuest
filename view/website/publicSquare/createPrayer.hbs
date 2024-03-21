@@ -1,0 +1,169 @@
+<head>
+    {{>websiteHeader}}
+    {{{body}}}
+</head>
+<style>
+    .error {
+        color: red !important;
+    }
+</style>
+<section id="listing" class="pt-50 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="ps-0  d-flex flex-wrap gap-2  align-items-center pb-50" style="list-style: none;">
+                    <li class="text-yeloish">Home</li>
+                    <li>></li>
+                    <li class="text-yeloish">Public Square</li>
+                    <li>></li>
+                    <li>Post a Prayer</li>
+                </ul>
+                <div class="listing d-flex justify-content-center align-items-center flex-wrap gap-2">
+                    <div class="text-center pb-50">
+                        <h3 class="cursive">Create a Public Square Post</h3>
+                        <h3 class="mb-0 fw-bold">Post your content in Public Square</h3>
+                    </div>
+
+                </div>
+                <form action="/website/addPrayer/{{groupId}}" method="post" enctype="multipart/form-data"
+                    id="formAuthentication" onsubmit="addPrayer()">
+                    <div class="row">
+                        <div class="custom-margin">
+                            <label for="file" class="custom-file">
+                                <input type="file" name="prayerImage" id="file" hidden>
+                                <div class="text-center text-preview">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4 19.5H20V12.5H22V20.5C22 21.0523 21.5523 21.5 21 21.5H3C2.44772 21.5 2 21.0523 2 20.5V12.5H4V19.5ZM13 9.5V16.5H11V9.5H6L12 3.5L18 9.5H13Z"
+                                            fill="black" />
+                                    </svg>
+                                    <h4 class="fs-16 fw-600 text-color mb-0">Upload a Photo/Video</h4>
+                                    <span class="text-graish">Min size: 800X600 or Max file size 5 MB allowed</span>
+                                    <p class="text-graish mb-0">Image (minimum size 200*200 and Less than 5MB
+                                        allowed) =
+                                        Jpeg, jpg, png, gif and webp <br>
+                                        Video (Video Maximum duration 90 Seconds) = mkv, mp4,mov, HEVC (h265),mpeg
+                                    </p>
+                                </div>
+                            </label>
+                            <div class="preview-image position-relative" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="custom-margin col-lg-6">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" class="form-control form-custom" placeholder="title">
+                        </div>
+                        <div class="custom-margin col-lg-6">
+                            <label for="category">Post Type</label>
+                            <select name="postType" id="category" class="form-select br-16 border-select">
+                                <option value="Select" selected disabled hidden>Select...</option>
+                                <option value="miracle">Prayer Request
+                                </option>
+                                <option value="miracle">Inspirational Message
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="custom-margin">
+                        <label for="ptype">Description</label>
+                        <textarea type="text" name="description" class="form-control form-custom" rows="5"
+                            placeholder="description..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{{>websiteFooter}} {{{body}}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#file').change(function () {
+            $('.preview-image').empty();
+            var files = $(this)[0].files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var fileType = file.type.split('/')[0];
+                    if (fileType === 'image') {
+                        $('<img>').attr('src', e.target.result).appendTo('.preview-image');
+                    } else if (fileType === 'video') {
+                        $('<video controls><source src="' + e.target.result + '" type="' + file.type + '"></video>').appendTo('.preview-image');
+                    }
+
+                }
+                reader.readAsDataURL(file);
+            }
+            $('.preview-image').show();
+        });
+
+        $("#formAuthentication").validate({
+            rules: {
+                postType: {
+                    required: true
+                }
+            },
+            messages: {
+                postType: {
+                    required: "Please select post type"
+                }
+            }
+        })
+    });
+
+</script>
+<script>
+    function addPrayer(e) {
+        event.preventDefault();
+        const prayer = document.getElementsByName("prayerImage")[0];
+        const title = document.getElementsByName("title")[0];
+        const description = document.getElementsByName("description")[0];
+        const errors = document.querySelectorAll('span.error');
+        // Step 2: Loop through the NodeList and remove each errorSpan
+        errors.forEach((errorSpan) => {
+            errorSpan.remove();
+        });
+        console.log({ prayer })
+        if (!prayer.files.length) {
+            const parent = prayer.parentNode;
+            const error = document.createElement('span');
+            error.classList.add("error");
+            error.textContent = 'Please enter prayer image or video';
+            // Insert the new <span> element after the parent element
+            parent.insertAdjacentElement('afterend', error);
+        }
+
+        if (title.value == '') {
+            console.log(title)
+            const parent = title.parentNode;
+            const error = document.createElement('span');
+            error.classList.add("error");
+            error.textContent = 'Please enter title';
+            // Insert the new <span> element after the parent element
+            parent.insertAdjacentElement('beforeend', error);
+        }
+
+        if (description.value == "") {
+            const parent = description.parentNode;
+            const error = document.createElement('span');
+            error.classList.add("error");
+            error.textContent = 'Please enter description';
+            // Insert the new <span> element after the parent element
+            parent.insertAdjacentElement('beforeend', error);
+        }
+        const errorMessages = document.querySelectorAll('span.error');
+        if (errorMessages.length === 0) {
+            // If there are no error messages, submit the form
+            const form = document.getElementById('formAuthentication'); // Replace 'yourFormId' with the actual ID of your form
+            form.submit();
+        }
+    }
+</script>

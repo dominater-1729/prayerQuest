@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css"
+        integrity="sha512-oe8OpYjBaDWPt2VmSFR+qYOdnTjeV9QPLJUeqZyprDEQvQLJ9C5PCFclxwNuvb/GQgQngdCXzKSFltuHD3eCxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .iti {
+            width: 90px;
+        }
+
+        .iti--separate-dial-code .iti__selected-dial-code {
+            margin-left: 6px;
+            color: #fff;
+        }
+
+        label.error {
+            color: red !important;
+        }
+
+        span.error {
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader-wrapper ">
+        <div class="loader d-flex justify-content-center align-items-center">
+            <div class="ball-scale-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <section class="login">
+        <div class="custom-height">
+            <div id="login">
+                <div class="modal fade show" id="exampleModalCenter" tabindex="-1"
+                    aria-labelledby="exampleModalCenterTitle" style="display: block;" aria-modal="true" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div id="logo">
+                                    <a href="#">
+                                        <img src="../assets/images/logo.png" alt="" class="img-fluid">
+                                    </a>
+                                    <h1 class="mb-0 cursive">Register</h1>
+                                    <h1 class="main-heading text-white">Create An Account</h1>
+                                    <p class="text-white-50">Static dummy text will appear here. 60 character ​to
+                                        display
+                                    </p>
+                                    <form action="/website/signup" method="post" id="formAuthentication"
+                                        class="text-start" onsubmit="passUpdate()">
+
+                                        <div class="custom-margin">
+                                            <label for="fname">First Name</label>
+                                            <input type="text" name="firstname" class="form-control form-custom"
+                                                value="">
+                                        </div>
+                                        <div class="custom-margin">
+                                            <label for="lname">Last Name</label>
+                                            <input type="text" name="lastname" class="form-control form-custom"
+                                                value="">
+                                        </div>
+                                        <div class="custom-margin">
+                                            <label for="username">Username</label>
+                                            <input type="text" name="username" class="form-control form-custom"
+                                                value="">
+                                        </div>
+                                        <div class="custom-margin">
+                                            <label for="organization">Organization</label>
+                                            <input type="text" name="organization" class="form-control form-custom"
+                                                value="">
+                                        </div>
+                                        <div class="custom-margin position-relative">
+                                            <label for="number">Mobile Number (Optional)</label>
+
+                                            <div class="d-flex align-items-center">
+                                                <input type="tel" name="countryCode" id="mobile_code"
+                                                    class="form-control form-custom">
+                                                <input type="number" name="phone" class="form-control form-custom ms-2"
+                                                    value="">
+                                            </div>
+
+                                        </div>
+                                        <div class="custom-margin">
+                                            <label for="email">Email ID</label>
+                                            <input type="text" name="email" class="form-control form-custom" value="">
+                                        </div>
+                                        <div class="custom-margin">
+                                            <label for="ZipCode">Zip Code</label>
+                                            <input type="text" name="zipcode" class="form-control form-custom" value="">
+                                        </div>
+                                        <div class="custom-margin">
+                                            <label for="Gander">Gender</label>
+                                            <select name="gender" id="" class="form-select br-16 border-select">
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="custom-margin position-relative">
+                                            <input type="password" name="password" id="password"
+                                                class="form-control form-custom" placeholder="New Password">
+                                            <a href="#" style="position: absolute ;top: 50%;right: 20px;
+                                            transform: translateY(-50%);"><i
+                                                    class="fa-regular fa-eye-slash toggle-password text-white"
+                                                    toggle="#password"></i></a>
+                                        </div>
+                                        <div class="custom-margin position-relative">
+                                            <input name="cpassword" type="password" id="confirm_password"
+                                                class="form-control form-custom" placeholder="Confirm Password">
+                                            <a href="#" style="position: absolute ;top: 50%;right: 20px;
+                                                transform: translateY(-50%);"><i
+                                                    class="fa-regular fa-eye-slash toggle-password text-white"
+                                                    toggle="#confirm_password"></i></a>
+                                        </div>
+                                        <div class="forgot-password">
+                                            <div class="password-strength">
+                                                <div class="lines"></div>
+                                                <div class="lines"></div>
+                                                <div class="lines"></div>
+                                                <div class="lines"></div>
+                                                <div class="lines"></div>
+                                            </div>
+                                            <div class="password-strength-text text-white ">Password
+                                                strength: <span id="strengthText"></span></div>
+                                            <p class="text-white-50">Password must: Use at least 8 characters, Upper and
+                                                Lower case characters, numbers, special characters (!@#$%^&*)</p>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                By registering you accept our <a href="">Terms of Services</a> and
+                                                <a href="">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                        <div class="login-btn text-center">
+                                            <!-- <button class="btn btn-custom">Create Account</button> -->
+                                            <button type="submit" class="btn btn-custom">Create Account</button>
+                                        </div>
+                                    </form>
+                                    <footer>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <p>Already have an account? <a href="/website/login">Login</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bundle.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    {{#if successToast}}
+    <script>
+        toastr.success('{{successToast}}');
+    </script>
+    {{/if}}
+    {{#if errorToast}}
+    <script>
+        toastr.error('{{errorToast}}');
+    </script>
+    {{/if}}
+    <script>
+        $(document).ready(function () {
+            $("#formAuthentication").validate({
+                rules: {
+                    firstname: {
+                        required: true
+                    },
+                    lastname: {
+                        required: true
+                    },
+                    username: {
+                        required: true
+                    },
+                    organization: {
+                        required: true
+                    },
+                    zipcode: {
+                        required: true
+                    },
+                    email: {
+                        required: true
+                    },
+                },
+                messages: {
+                    firstname: {
+                        required: "Please enter firstname"
+                    },
+                    lastname: {
+                        required: "Please enter lastname"
+                    },
+                    username: {
+                        required: "Please enter username"
+                    },
+                    organization: {
+                        required: "Please enter organization"
+                    },
+                    zipcode: {
+                        required: "Please enter zipcode"
+                    },
+                    email: {
+                        required: "Please enter email"
+                    },
+
+                }
+            });
+        });
+    </script>
+    <script>
+        $("#mobile_code").intlTelInput({
+            initialCountry: "in",
+            separateDialCode: true,
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#password').keyup(function () {
+                var password = $(this).val();
+                var strength = 0;
+                if (password.length >= 8) {
+                    strength += 1;
+                }
+                if (password.match(/[A-Z]/)) {
+                    strength += 1;
+                }
+                if (password.match(/[a-z]/)) {
+                    strength += 1;
+                }
+                if (password.match(/[0-9]/)) {
+                    strength += 1;
+                }
+                if (password.match(/[!@#$%^&*]/)) {
+                    strength += 1;
+                }
+
+                $('.password-strength .lines').css('background-color', 'red');
+                for (var i = 0; i < strength; i++) {
+                    $('.password-strength .lines').eq(i).css('background-color', 'green');
+                }
+
+                $('.password-strength-text').show();
+
+                var strengthText = "";
+                if (strength == 0) {
+                    strengthText = "Very Weak";
+                } else if (strength == 1) {
+                    strengthText = "Weak";
+                } else if (strength == 2) {
+                    strengthText = "Medium";
+                } else if (strength == 3) {
+                    strengthText = "Strong";
+                } else {
+                    strengthText = "Very Strong";
+                }
+                $('#strengthText').text(strengthText);
+            });
+        });
+    </script>
+    <script>
+        $(".toggle-password").click(function () {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+    </script>
+    <script>
+        function passUpdate(e) {
+            event.preventDefault();
+            const phone = document.getElementsByName("phone")[0];
+            const newpass = document.getElementsByName("password")[0];
+            const confirmpass = document.getElementsByName("cpassword")[0];
+            const errors = document.querySelectorAll('span.error');
+            // Step 2: Loop through the NodeList and remove each errorSpan
+            errors.forEach((errorSpan) => {
+                errorSpan.remove();
+            });
+
+            if (newpass.value == '') {
+                const parent = newpass.parentNode;
+                const error = document.createElement('span');
+                error.classList.add("error");
+                error.textContent = 'Please enter new password';
+                // Insert the new <span> element after the parent element
+                parent.insertAdjacentElement('beforeend', error);
+            }
+            if (confirmpass.value == '') {
+                const parent = confirmpass.parentNode;
+                const error = document.createElement('span');
+                error.classList.add("error");
+                error.textContent = 'Please enter confirm password';
+                // Insert the new <span> element after the parent element
+                parent.insertAdjacentElement('beforeend', error);
+            }
+            if (confirmpass.value != newpass.value) {
+                const parent = confirmpass.parentNode;
+                const error = document.createElement('span');
+                error.classList.add("error");
+                error.textContent = 'New password and confirm password must be same';
+                // Insert the new <span> element after the parent element
+                parent.insertAdjacentElement('beforeend', error);
+            }
+            const errorMessages = document.querySelectorAll('span.error');
+            if (errorMessages.length === 0) {
+                // If there are no error messages, submit the form
+                const form = document.getElementById('formAuthentication'); // Replace 'yourFormId' with the actual ID of your form
+                form.submit();
+            }
+        }
+    </script>
+</body>
+
+</html>

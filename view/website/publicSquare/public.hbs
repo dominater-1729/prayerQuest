@@ -1,0 +1,259 @@
+<head>
+    {{>websiteHeader}}
+    {{{body}}}
+</head>
+
+<section class="hero-section" id="aboutus">
+    <div class="container">
+        <div class="heros">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-details text-center">
+                        <h3 class="cursive text-center">Public Square</h3>
+                        <h1 class="text-white text-center d-flex justify-content-center mb-4">Check our public
+                            square community posts
+                        </h1>
+                        <ul class="ps-0 text-white d-flex flex-wrap gap-2 justify-content-center align-items-center"
+                            style="list-style: none;">
+                            <li class="text-yeloish">Home</li>
+                            <li>></li>
+                            <li>Public Square</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="listing" class="p-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="listing d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <div>
+                        <h3 class="mb-0 fw-bold">Public Square</h3>
+                        <p class="mb-0 text-black-50">( Showing 450 Results )
+                        </p>
+                    </div>
+                    <div class="search d-flex gap-3">
+                        <form action="" class="position-relative d-flex gap-3" id="search-list">
+                            <div>
+                                <input type="text" class="form-control form-custom ps-3" style="width: 320px;"
+                                    placeholder="Search...">
+                                <a href="#" class="btn btn-danger search-icon"
+                                    style="right: 0;
+                                    padding: 10px 18px;
+                                    margin-top: 0px;
+                                    border-top-left-radius: 0px !important;border-bottom-left-radius: 0px !important;border-radius: 16px;"><i
+                                        class="fa fa-search"></i></a>
+                            </div>
+                        </form>
+                        <div class="filter-btn">
+                            <a href="#" class="bg-light-50 " data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../../assets/images/icons/filter.png" alt="" class="img-fluid">
+                            </a>
+                            <div class="dropdown-custom dropdown-menu py-0">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="profile">
+                                            <div class="info">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                                                    <h5 class="mb-0">Filters</h5>
+                                                    <a href="#" class="clear-all">Clear all</a>
+                                                </div>
+                                                <div class="options  mt-2">
+                                                    <form action="">
+                                                        <div class="custom-margin">
+                                                            <label for="date">Search keyword</label>
+                                                            <input type="search" class="form-control form-custom"
+                                                                placeholder="Search...">
+                                                        </div>
+                                                        <div class="custom-margin">
+                                                            <label for="date">Search</label>
+                                                            <select name="" class="form-control" id="">
+                                                                <option value="select" disabled hidden selected>
+                                                                    Select</option>
+                                                                <option value="mircle">Miracle</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="custom-margin">
+                                                            <label for="date">From</label>
+                                                            <input type="date" class="form-control form-custom"
+                                                                placeholder="Search...">
+                                                        </div>
+                                                        <div class="custom-margin">
+                                                            <label for="date">To</label>
+                                                            <input type="date" class="form-control form-custom"
+                                                                placeholder="Search...">
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <button type="submit"
+                                                                class="btn btn-custom mt-0">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="create-btn">
+                            <a href="/website/createPrayer" class="btn btn-outline-red">
+                                + Add Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#if prayerdata}}
+        <div class="row pt-50 pb-50">
+            {{#each prayerdata}}
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 mb-7">
+                <a href="#">
+                    <div class="user-details d-flex align-items-center gap-2">
+                        <div class="user-img">
+                            {{#if userImage}}
+                            <img src="/assets/images/userImage/{{../decryption userImage}}" alt="">
+                            {{else}}
+                            <img src="/assets/images/blank.png" alt="">
+                            {{/if}}
+                        </div>
+                        <div class="user-share d-flex align-items-center gap-2">
+                            <p class="mb-0">by <b>{{../decryption userfirstname}} {{../decryption userlastname}}</b></p>
+                            <h5><img src="../../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                    class=" badge-up text-graish" style="font-weight: 500;font-size: 14px;">6k</span>
+                            </h5>
+                        </div>
+                    </div>
+                </a>
+                <div class="circle-video position-relative mb-10px">
+                    {{#equal type "image"}}
+                    <img src="/assets/images/prayer/{{../decryption prayer}}" alt="">
+                    <div class="overlay"></div>
+                    {{/equal}}
+                    {{#equal type "video"}}
+                    <div class="circle-video videos-div position-relative">
+                        <video src="/assets/images/prayer/{{../decryption prayer}}" controls width="100%"></video>
+                    </div>
+                    {{/equal}}
+
+
+                </div>
+                <div class="circle-details">
+                    <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
+                        Posted {{createdAt}}</p>
+                    <div class="socials-images">
+                        <img src="../../assets/images/icons/facebook.png" alt="">
+                        <img src="../../assets/images/icons/twitter.png" alt="">
+                        <img src="../../assets/images/icons/reddit.png" alt="">
+                        <img src="../../assets/images/icons/youtube.png" alt="">
+                        <img src="../../assets/images/icons/instagram.png" alt="">
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center flex-wrap mb-10px  mt-15 pe-2">
+                        <a href="/website/squareDetails/{{prayerId}}">
+                            <h4 class="mb-0" style="margin-bottom: 0 !important;">{{../decryption title}}</h4>
+                        </a>
+                        <a href="#"><i class="fa-regular fa-bookmark fs-18"></i></a>
+                    </div>
+                    <div class="mt-15 mb-10px">
+                        <p class="text-graish  para mb-0"> {{../decryption description}}
+                        </p>
+                        <a href="/website/squareDetails/{{prayerId}}" class="read-mode d-flex justify-content-end">Read
+                            More</a>
+                    </div>
+                    <div class="circle-watching">
+                        <a href="#">
+                            <div class="view-circle">
+                                <h5 class="mb-0">
+                                    <i class="fa fa-eye"></i>
+                                    2K
+                                </h5>
+                            </div>
+                        </a>
+                        <div class="seprter"></div>
+                        <a href="#">
+                            <div class="view-circle">
+                                <h5 class="mb-0">
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    2K
+                                </h5>
+                            </div>
+                        </a>
+                        <div class="seprter"></div>
+                        <a href="#">
+                            <div class="view-circle">
+                                <h5 class="mb-0">
+                                    <i class="fa-solid fa-share"></i>
+                                    100
+                                </h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="count-circle mt-15" style="background-color: #F0F8FF;">
+                        <div class="circle-history">
+                            <h5><img src="../../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
+                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                            <h6>I am praying now</h6>
+                        </div>
+                        <div class="circle-history">
+                            <h5><img src="../../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                            <h6>I already prayed</h6>
+                        </div>
+                        <div class="circle-history">
+                            <h5><img src="../../assets/images/icons/bible.svg" alt="" class="img-fluid me-1"> <span
+                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                            <h6>I will pray later</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            {{#greater_1 pagination.pageCount}}
+
+            <ul class="pagination float-right" style="justify-content: end; !important">
+                {{#paginate pagination type="first"}}
+                <li {{#if disabled}}class="disabled page-item" {{/if}}><a class="page-link"
+                        href="?page_no={{n}}">First</a>
+                </li>
+                {{/paginate}}
+                {{#paginate pagination type="previous"}}
+                <li {{#if disabled}}class="disabled page-item" {{/if}}><a class="page-link"
+                        href="?page_no={{n}}">Prev</a>
+                </li>
+                {{/paginate}}
+                {{#paginate pagination type="middle" limit="9"}}
+                <li {{#if active}}class="active page-item" {{/if}}><a class="page-link" href="?page_no={{n}}">{{n}}</a>
+                </li>
+                {{/paginate}}
+                {{#paginate pagination type="next"}}
+                <li {{#if disabled}}class="disabled page-item" {{/if}}><a class="page-link"
+                        href="?page_no={{n}}">Next</a>
+                </li>
+                {{/paginate}}
+                {{#paginate pagination type="last"}}
+                <li {{#if disabled}}class="disabled page-item" {{/if}}><a class="page-link"
+                        href="?page_no={{n}}">Last</a>
+                </li>
+                {{/paginate}}
+            </ul>
+
+            {{/greater_1}}
+        </div>
+        {{else}}
+        <div class="table-responsive">
+            <div class="illustration text-center">
+                <img src="/assets/images/nodatapq.svg" alt="">
+            </div>
+            <h3 class="text-center">No prayer found</h3>
+        </div>
+        {{/if}}
+    </div>
+</section>
+
+{{>websiteFooter}} {{{body}}}

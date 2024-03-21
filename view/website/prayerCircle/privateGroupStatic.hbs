@@ -1,0 +1,113 @@
+<head>
+    {{>websiteHeader}}
+    {{{body}}}
+</head>
+
+<section class="hero-section" id="aboutus">
+    <div class="container">
+        <div class="heros">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-details text-center">
+                        <h3 class="cursive text-center">Prayers Circle</h3>
+                        <h1 class="text-white text-center d-flex justify-content-center mb-4">Test Group
+                        </h1>
+                        <ul class="ps-0 text-white d-flex flex-wrap gap-2 justify-content-center align-items-center"
+                            style="list-style: none;">
+                            <li class="text-yeloish">Home</li>
+                            <li>></li>
+                            <li class="text-yeloish">Prayer Circle</li>
+                            <li>></li>
+                            <li>Test Group</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="listing" class="pt-50 pb-50 detail-margin">
+    <div class="container">
+        <div class="row pt-50 pb-50">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-7">
+                <div class="circle-video position-relative text-center">
+                    <!-- <video src="../../assets/videos/prayer.mp4" controls
+                            style="border-radius: 16px;width: 750px;"></video> -->
+                    <img src="../../assets/images/static.png" alt="" style="border-radius: 16px;width: 750px;">
+                </div>
+                <div class="circle-details mt-2">
+                    <p class="text-graish mb-0" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
+                        Posted 14
+                        Mins ago</p>
+                    <div class="joint  mt-2">
+                        <div>
+                            <h4 class="mb-0">Group Name</h4>
+                            <p class="mb-0 "><b>1.8K</b> <span class="text-graish">Members</span> • <b>40+</b> <span
+                                    class="text-graish">Prayer</span></p>
+                        </div>
+                        <div>
+                            <a href="/website/members" class="btn btn-cancel bg-light-50 text-color fw-600 px-4"
+                                style="border-radius: 16px;"><img src="../../assets/images/icons/member.svg"
+                                    class="img-fluid" alt="">
+                                View Members</a>
+                        </div>
+                    </div>
+                    <p class="mb-0 mt-2 text-graish">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Necessitatibus
+                        asperiores fugit quos repellat cupiditate molestiae sequi tempora.</p>
+                    <div class="mt-15 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div class="count-circle" style="width: 600px;">
+                            <div class="circle-history">
+                                <h5><img src="../../assets/images/icons/pray.svg" alt="" class="img-fluid me-1">
+                                    <span class=" badge-up" style="font-weight: 500;">2k</span>
+                                </h5>
+                                <h6>I am praying now</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../../assets/images/icons/folded.svg" alt="" class="img-fluid me-1">
+                                    <span class=" badge-up" style="font-weight: 500;">2k</span>
+                                </h5>
+                                <h6>I already prayed</h6>
+                            </div>
+                            <div class="circle-history">
+                                <h5><img src="../../assets/images/icons/bible.svg" alt="" class="img-fluid me-1">
+                                    <span class=" badge-up" style="font-weight: 500;">2k</span>
+                                </h5>
+                                <h6>I will pray later</h6>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-custom mt-0">Join Group</a>
+                    </div>
+                </div>
+                <div class="content-container">
+                    <div class="private-group d-flex justify-content-center align-items-center flex-column text-center"
+                        style="height: 450px;">
+                        <div class="group-private-icon mb-2">
+                            <img src="../../assets/images/icons/lock.svg" class="img-fluid" alt="">
+                        </div>
+                        <div>
+                            <h4 class=" text-color">This group is private</h4>
+                            <p class="mb-0 fs-14 text-graish">Lorem Ipsum is simply dummy text of the printing and
+                                typesetting industry.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>websiteFooter}} {{{body}}}
+<script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<script>
+    $(document).ready(function () {
+        $(".report-flaged").click(function () {
+            $("#flagged").modal("show")
+        })
+    })
+</script>

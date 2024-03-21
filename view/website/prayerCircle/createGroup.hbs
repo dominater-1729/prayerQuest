@@ -1,0 +1,133 @@
+<head>
+    {{>websiteHeader}}
+    {{{body}}}
+</head>
+<style>
+    label.error {
+        color: red !important;
+    }
+</style>
+<section id="listing" class="pt-50 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="ps-0 mb-0  d-flex flex-wrap gap-2  align-items-center pb-50" style="list-style: none;">
+                    <li class="text-yeloish">Home</li>
+                    <li>></li>
+                    <li class="text-yeloish">Group Profile</li>
+                    <li>></li>
+                    <li>Create a Group</li>
+                </ul>
+                <div class="listing d-flex justify-content-center align-items-center flex-wrap gap-2">
+                    <div class="text-center pb-50">
+                        <h3 class="cursive">Create a Group</h3>
+                        <h3 class="mb-0 fw-bold">Heading will come here</h3>
+                    </div>
+
+                </div>
+                <form action="/website/createGroup/{{id}}" method="post" id="formAuthentication"
+                    enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="custom-margin">
+                            <label for="file" class="custom-file">
+                                <input type="file" id="file" name="groupImage" accept="image/*" hidden>
+                                <div class="text-center text-preview">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4 19.5H20V12.5H22V20.5C22 21.0523 21.5523 21.5 21 21.5H3C2.44772 21.5 2 21.0523 2 20.5V12.5H4V19.5ZM13 9.5V16.5H11V9.5H6L12 3.5L18 9.5H13Z"
+                                            fill="black" />
+                                    </svg>
+                                    <h4 class="fs-16 fw-600 text-color mb-0">Upload Group thumbnail image</h4>
+                                    <span class="text-graish">Max size: 1320X550</span>
+                                    <p class="text-graish mb-0">Image (minimum size 200*200 and Less than 5MB
+                                        allowed) =
+                                        Jpeg, jpg, png, gif and webp <br>
+                                        <!-- Video (Video Maximum duration 90 Seconds) = mkv, mp4,mov, HEVC (h265),mpeg -->
+                                    </p>
+                                </div>
+                            </label>
+                            <div class="preview-image position-relative" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="custom-margin " style="margin-bottom: 20px !important;">
+                            <label for="title">Group Name</label>
+                            <input type="text" class="form-control form-custom" name="groupName"
+                                placeholder="Enter group name">
+                        </div>
+                        <!-- <div class="custom-margin col-lg-6">
+                                <label for="privacy">Privacy</label>
+                                <input type="text" class="form-control form-custom" placeholder="Enter group Privacy">
+                            </div> -->
+                    </div>
+                    <!-- <div class="custom-margin ">
+                            <label for="category">Post Type</label>
+                            <select name="category" id="category" class="form-select br-16 border-select">
+                                <option value="Select" selected disabled hidden>Select...</option>
+                                <option value="miracle">Prayer Request
+                                </option>
+                                <option value="miracle">Inspirational Message
+                                </option>
+                            </select>
+                        </div> -->
+                    <div class="custom-margin">
+                        <label for="ptype">Description</label>
+                        <textarea type="text" name="description" class="form-control form-custom" rows="5"
+                            placeholder="write something..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom">Create Group</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+{{>websiteFooter}} {{{body}}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#file').change(function () {
+            $('.preview-image').empty();
+            var files = $(this)[0].files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var fileType = file.type.split('/')[0];
+                    if (fileType === 'image') {
+                        $('<img>').attr('src', e.target.result).appendTo('.preview-image');
+                    } else if (fileType === 'video') {
+                        $('<video controls><source src="' + e.target.result + '" type="' + file.type + '"></video>').appendTo('.preview-image');
+                    }
+
+                }
+                reader.readAsDataURL(file);
+            }
+            $('.preview-image').show();
+        });
+
+        $(document).ready(function () {
+            $("#formAuthentication").validate({
+                rules: {
+                    groupName: {
+                        required: true
+                    },
+                    description: {
+                        required: true
+                    },
+
+                },
+                messages: {
+                    groupName: {
+                        required: "Please enter group name"
+                    },
+                    description: {
+                        required: "Please enter description"
+                    },
+                }
+            });
+        });
+    });
+</script>

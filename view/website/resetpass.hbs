@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css"
+        integrity="sha512-oe8OpYjBaDWPt2VmSFR+qYOdnTjeV9QPLJUeqZyprDEQvQLJ9C5PCFclxwNuvb/GQgQngdCXzKSFltuHD3eCxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    span.error {
+        color: red !important;
+    }
+</style>
+
+<body>
+    <div class="loader-wrapper ">
+        <div class="loader d-flex justify-content-center align-items-center">
+            <div class="ball-scale-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <section class="login">
+        <div class="custom-height">
+            <div id="login">
+                <div class="modal fade show" id="exampleModalCenter" tabindex="-1"
+                    aria-labelledby="exampleModalCenterTitle" style="display: block;" aria-modal="true" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div id="logo">
+                                    <a href="#">
+                                        <img src="../assets/images/logo.png" alt="" class="img-fluid">
+                                    </a>
+                                    <h1 class="main-heading text-white">Reset Password</h1>
+                                    <p class="text-white-50">Your new password must be different from previous used
+                                        passwords.
+                                    </p>
+                                    <form action="/website/updatePass" method="post" id="formAuthentication"
+                                        class="text-start" onsubmit="passUpdate()">
+                                        <div class="custom-margin position-relative">
+                                            <input type="password" name="newpass" id="password"
+                                                class="form-control form-custom" placeholder="New Password">
+                                            <a href="#" style="position: absolute ;top: 16px;right: 20px;
+                                        "><i class="fa-regular fa-eye-slash toggle-password text-white"
+                                                    toggle="#password"></i></a>
+                                        </div>
+                                        <div class="custom-margin position-relative">
+                                            <input type="password" name="cpass" id="confirm_password"
+                                                class="form-control form-custom" placeholder="Confirm Password">
+                                            <a href="#" style="position: absolute ;top: 16px;right: 20px;
+                                                "><i class="fa-regular fa-eye-slash toggle-password text-white"
+                                                    toggle="#confirm_password"></i></a>
+                                            <span class="error"></span>
+                                        </div>
+                                        <div class="forgot-password">
+                                            <div class="password-strength">
+                                                <div class="lines"></div>
+                                                <div class="lines"></div>
+                                                <div class="lines"></div>
+                                                <div class="lines"></div>
+                                                <div class="lines"></div>
+                                            </div>
+                                            <div class="password-strength-text text-white ">Password
+                                                strength: <span id="strengthText"></span></div>
+                                            <p class="text-white-50">Password must: Use at least 8 characters, Upper and
+                                                Lower case characters, numbers, special characters (!@#$%^&*)</p>
+                                        </div>
+                                        <input type="hidden" value="{{email}}" name="email">
+                                        <div class="login-btn text-center">
+                                            <button type="submit" class="btn btn-custom" id="submitBtn">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bundle.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#password').keyup(function () {
+                var password = $(this).val();
+                var strength = 0;
+                if (password.length >= 8) {
+                    strength += 1;
+                }
+                if (password.match(/[A-Z]/)) {
+                    strength += 1;
+                }
+                if (password.match(/[a-z]/)) {
+                    strength += 1;
+                }
+                if (password.match(/[0-9]/)) {
+                    strength += 1;
+                }
+                if (password.match(/[!@#$%^&*]/)) {
+                    strength += 1;
+                }
+
+                $('.password-strength .lines').css('background-color', 'red');
+                for (var i = 0; i < strength; i++) {
+                    $('.password-strength .lines').eq(i).css('background-color', 'green');
+                }
+
+                $('.password-strength-text').show();
+
+                var strengthText = "";
+                if (strength == 0) {
+                    strengthText = "Very Weak";
+                } else if (strength == 1) {
+                    strengthText = "Weak";
+                } else if (strength == 2) {
+                    strengthText = "Medium";
+                } else if (strength == 3) {
+                    strengthText = "Strong";
+                } else {
+                    strengthText = "Very Strong";
+                }
+                $('#strengthText').text(strengthText);
+            });
+
+
+        });
+    </script>
+    <script>
+        function passUpdate(e) {
+            event.preventDefault();
+            const newpass = document.getElementsByName("newpass")[0];
+            const confirmpass = document.getElementsByName("cpass")[0];
+            const errors = document.querySelectorAll('span.error');
+            // Step 2: Loop through the NodeList and remove each errorSpan
+            errors.forEach((errorSpan) => {
+                errorSpan.remove();
+            });
+
+            if (newpass.value == '') {
+                const parent = newpass.parentNode;
+                const error = document.createElement('span');
+                error.classList.add("error");
+                error.textContent = 'Please enter new password';
+                // Insert the new <span> element after the parent element
+                parent.insertAdjacentElement('beforeend', error);
+            }
+            if (confirmpass.value == '') {
+                const parent = confirmpass.parentNode;
+                const error = document.createElement('span');
+                error.classList.add("error");
+                error.textContent = 'Please enter confirm password';
+                // Insert the new <span> element after the parent element
+                parent.insertAdjacentElement('beforeend', error);
+            }
+            if (confirmpass.value != newpass.value) {
+                const parent = confirmpass.parentNode;
+                const error = document.createElement('span');
+                error.classList.add("error");
+                error.textContent = 'New password and confirm password must be same';
+                // Insert the new <span> element after the parent element
+                parent.insertAdjacentElement('beforeend', error);
+            }
+            const errorMessages = document.querySelectorAll('span.error');
+            if (errorMessages.length === 0) {
+                // If there are no error messages, submit the form
+                const form = document.getElementById('formAuthentication'); // Replace 'yourFormId' with the actual ID of your form
+                form.submit();
+            }
+        }
+    </script>
+    <script>
+        $(".toggle-password").click(function () {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+    </script>
+    {{#if successToast}}
+    <script>
+        toastr.success('{{successToast}}');
+    </script>
+    {{/if}}
+    {{#if errorToast}}
+    <script>
+        toastr.error('{{errorToast}}');
+    </script>
+    {{/if}}
+</body>
+
+</html>

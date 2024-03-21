@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="shortcut icon" href="../../assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loader-wrapper ">
+        <div class="loader d-flex justify-content-center align-items-center">
+            <div class="ball-scale-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="give-donations">
+        <a href="/website/donate" class="btn-donation">
+            <img src="../../assets/images/donate.png" class="img-fluid me-1" alt=""> Give
+        </a>
+    </div>
+    <header id="navbar">
+        <nav class="navbar navbar-expand-lg mt-2" id="create-group">
+            <div class="container custom-container">
+                <a class="navbar-brand" href="../index.html" style="color: #fff;">
+                    <img src="../../assets/images/logo.png" alt=""></a>
+                <div class="d-flex gap-3">
+                    <div class="mobile-header" id="mobile-header">
+                        <form class="d-flex align-items-center gap-3" role="search">
+                            <div class="position-relative" id="notify-drop">
+                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false" class="" id="notificationss"
+                                    style="cursor: pointer;">
+                                    <div class="notification">
+                                        <img src="../../assets/images/Notification.png" alt="">
+                                    </div>
+                                </a>
+                                <div class="dot"></div>
+                                <div class="dropdown-custom dropdown-menu py-0">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="profile">
+                                                <div class="info">
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                                                        <h5 class="mb-0">Notifications</h5>
+                                                        <a href="#" class="clear-all">Clear all</a>
+                                                    </div>
+                                                    <div class="options  mt-2">
+                                                        <ul class="opt ps-0 scrollbar-container" id="scrollar">
+                                                            <li class="drop-li">
+                                                                <a href="#" class="d-flex align-items-center gap-3">
+                                                                    <div>
+                                                                        <img src="../../assets/images/avtar/2.jpg"
+                                                                            width="40" alt="" height="40"
+                                                                            class="rounded-2">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="mb-0"
+                                                                            style="font-size: 13px;line-height: 16px;font-weight: 500;">
+                                                                            New
+                                                                            Publication uploaded on XYZ
+                                                                            Channel</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="#" class="d-flex align-items-center gap-3">
+                                                                    <div>
+                                                                        <img src="../../assets/images/avtar/2.jpg"
+                                                                            width="40" alt="" height="40"
+                                                                            class="rounded-2">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="mb-0"
+                                                                            style="font-size: 13px;line-height: 16px;font-weight: 500;">
+                                                                            New
+                                                                            Publication uploaded on XYZ
+                                                                            Channel</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/website/donate">
+                                <div class="give mygive">
+                                    <p class="mb-0">Give</p>
+                                </div>
+                            </a>
+                            <div class="position-relative" id="profile-detailss" style="cursor: pointer;">
+                                <a href="#" class="give d-flex align-items-center" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="../../assets/images/avtar/2.jpg" alt="" style="border-radius: 10px;"
+                                        width="35" height="35">
+                                    <span class="text-white ms-2"><i class="fa-solid fa-angle-down"></i></span>
+                                </a>
+                                <div class="dropdown-custom py-0 dropdown-menu">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="profile">
+                                                <div class="profile-image d-flex gap-2 align-items-center">
+                                                    <img src="../../assets/images/avtar/2.jpg" alt="" width="70"
+                                                        height="70" class="rounded-circle">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="username">Jone Doe</span>
+                                                        <a href="/website/view" class="view-profile">View
+                                                            Profile</a>
+                                                    </div>
+                                                </div>
+                                                <hr style="border: 1px solid #F0F8FF;">
+                                                <div class="info">
+                                                    <h6>Platform analytics</h6>
+                                                    <div class="count-circle mt-15 flex-nowrap px-0">
+                                                        <div class="circle-history">
+                                                            <h5>140</h5>
+                                                            <h6>People Online</h6>
+                                                        </div>
+                                                        <div class="circle-history">
+                                                            <h5>14</h5>
+                                                            <h6>Total Groups</h6>
+                                                        </div>
+                                                        <div class="circle-history">
+                                                            <h5>200K</h5>
+                                                            <h6>People Praying</h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="options mt-2">
+                                                        <ul class="opt ps-0">
+                                                            <li class="drop-li">
+                                                                <a href="../../pages/prayer/prayer.html"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../../assets/images/icons/folded.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Prayers</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="../../pages/video/video.html"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../../assets/images/icons/play-button.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Video</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="/website/favorite"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../../assets/images/icons/bookmark.svg"
+                                                                            id="bookmark" alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Favourite</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="../../pages/membership.html"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../../assets/images/icons/membership-card.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Membership</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="drop-li noty-toggle position-relative">
+                                                                <a href="#" class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../../assets/images/icons/notification.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex justify-content-between align-items-center">
+                                                                        <span>Notifications</span>
+                                                                        <div class="form-check form-switch" style="position: absolute;
+                                                                        right: 0;
+                                                                        top: 9px;">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" role="switch"
+                                                                                id="flexSwitchCheckDefault1">
+                                                                            <label class="form-check-label"
+                                                                                for="flexSwitchCheckDefault1"></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="/website/changePass"
+                                                                    class="d-flex align-items-center gap-3">
+                                                                    <div class="icon">
+                                                                        <img src="../../assets/images/icons/key.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Change Password</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="drop-li">
+                                                                <a href="../../pages/index.html"
+                                                                    class="d-flex align-items-center gap-3 justify-content-center">
+                                                                    <div class="icon">
+                                                                        <img src="../../assets/images/icons/logout.svg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Logout</span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                        role="button" aria-controls="offcanvasExample">
+                        <i class="fa-solid fa-bars" style="color: #fff;"></i>
+                    </button>
+                </div>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title navbar-brand" id="offcanvasExampleLabel">
+                            <img src="../../assets/images/logo.png" alt="">
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="collapse navbar-collapse show" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="../about/about.html">About Us</a>
+                                </li>
+                                <li class="nav-item hover-drop">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a class="nav-link " href="../prayer/prayer.html">Prayers</a>
+                                        <span class="prayer-dropicon"><i
+                                                class="fa fas fa-angle-right text-white"></i></span>
+                                    </div>
+                                    <div class="dropdown-custom py-0 " style="left: 50% !important; transform: translateX(-50%);    width: 100%;
+                                    max-width: 1024px;">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="profile">
+                                                    <div class="info">
+                                                        <div class="options prayer-filter  mt-2">
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <ul class="opt">
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for a Miracle
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Anxiety
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Encouragement
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Faith
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Forgiveness
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Friends
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Gratitude
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for healing/Healing Prayer
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Health
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <ul class="opt">
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Hope and Courage
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Humility
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Kindness
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for marriage
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for My Children
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for my Husband
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for my Wife
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Peace
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Others
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <ul class="opt">
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Protection
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Responsibility
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Restoration
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for School
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Sick Friend
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for Someone in Need
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for the ability to Forgive
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers before Surgery
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for your Neighbors
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <ul class="opt">
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer for the Nation
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayer to Heal a Broken Heart
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers before Bed
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers for Family Unity
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers for Financial Blessings
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Prayers that Heal
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="drop-li">
+                                                                            <a href="../prayerMiracle/prayer-mircle.html"
+                                                                                class="d-flex align-items-center gap-3 fs-14 text-color">
+                                                                                Strength Prayers
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../prayerCircle/prayercircle.html">Prayer
+                                        Circle</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="../publicSquare/public.html">Public Square</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/website/originalPrayer">PQ Originals</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/website/inspiration">Inspirational Quotes</a>
+                                </li>
+                            </ul>
+                            <form role="search" id="web-screen">
+                                <div class="d-flex align-items-center gap-3 ">
+                                    <div class="position-relative" id="notify-drop">
+                                        <a href="#" data-bs-toggle="dropdown" aria-expanded="false" class=""
+                                            id="notificationss" style="cursor: pointer;">
+                                            <div class="notification">
+                                                <img src="../../assets/images/Notification.png" alt="">
+                                            </div>
+                                        </a>
+                                        <div class="dot"></div>
+                                        <div class="dropdown-custom dropdown-menu py-0">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="profile">
+                                                        <div class="info">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                                                                <h5 class="mb-0">Notifications</h5>
+                                                                <a href="#" class="clear-all">Clear all</a>
+                                                            </div>
+                                                            <div class="options  mt-2">
+                                                                <ul class="opt ps-0 scrollbar-container" id="scrollar">
+                                                                    <li class="drop-li">
+                                                                        <a href="#"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div>
+                                                                                <img src="../../assets/images/avtar/2.jpg"
+                                                                                    width="40" alt="" height="40"
+                                                                                    class="rounded-2">
+                                                                            </div>
+                                                                            <div>
+                                                                                <p class="mb-0"
+                                                                                    style="font-size: 13px;line-height: 16px;font-weight: 500;">
+                                                                                    New
+                                                                                    Publication uploaded on XYZ
+                                                                                    Channel</p>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="#"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div>
+                                                                                <img src="../../assets/images/avtar/2.jpg"
+                                                                                    width="40" alt="" height="40"
+                                                                                    class="rounded-2">
+                                                                            </div>
+                                                                            <div>
+                                                                                <p class="mb-0"
+                                                                                    style="font-size: 13px;line-height: 16px;font-weight: 500;">
+                                                                                    New
+                                                                                    Publication uploaded on XYZ
+                                                                                    Channel</p>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/website/donate">
+                                        <div class="give mygive">
+                                            <p class="mb-0">Give</p>
+                                        </div>
+                                    </a>
+                                    <div class="position-relative" id="profile-detailss" style="cursor: pointer;">
+                                        <a href="#" class="give d-flex align-items-center" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <img src="../../assets/images/avtar/2.jpg" alt=""
+                                                style="border-radius: 10px;" width="35" height="35">
+                                            <span class="text-white ms-2 text-username" style="font-size: 14px;">Chloe
+                                                deker</span>
+                                            <span class="text-white ms-2 text-arrow"><i
+                                                    class="fa-solid fa-angle-down"></i></span>
+                                        </a>
+                                        <div class="dropdown-custom py-0 dropdown-menu">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="profile">
+                                                        <div class="profile-image d-flex gap-2 align-items-center">
+                                                            <img src="../../assets/images/avtar/2.jpg" alt="" width="70"
+                                                                height="70" class="rounded-circle">
+                                                            <div class="d-flex flex-column">
+                                                                <span class="username">Jone Doe</span>
+                                                                <a href="/website/profile" class="view-profile">View
+                                                                    Profile</a>
+                                                            </div>
+                                                        </div>
+                                                        <hr style="border: 1px solid #F0F8FF;">
+                                                        <div class="info">
+                                                            <h6>Platform analytics</h6>
+                                                            <div class="count-circle mt-15 flex-nowrap px-0">
+                                                                <div class="circle-history">
+                                                                    <h5>140</h5>
+                                                                    <h6>People Online</h6>
+                                                                </div>
+                                                                <div class="circle-history">
+                                                                    <h5>14</h5>
+                                                                    <h6>Total Groups</h6>
+                                                                </div>
+                                                                <div class="circle-history">
+                                                                    <h5>200K</h5>
+                                                                    <h6>People Praying</h6>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="options mt-2">
+                                                                <ul class="opt ps-0">
+                                                                    <li class="drop-li">
+                                                                        <a href="../../pages/prayer/prayer.html"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../../assets/images/icons/folded.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Prayers</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="../../pages/video/video.html"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../../assets/images/icons/play-button.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Video</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/favorite"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../../assets/images/icons/bookmark.svg"
+                                                                                    id="bookmark" alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Favourite</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/membership"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../../assets/images/icons/membership-card.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Membership</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+
+                                                                    <li class="drop-li noty-toggle position-relative">
+                                                                        <a href="#"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../../assets/images/icons/notification.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div
+                                                                                class="d-flex justify-content-between align-items-center">
+                                                                                <span>Notifications</span>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="form-check form-switch" style="position: absolute;
+                                                                        right: 0;
+                                                                        top: 9px;">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" role="switch"
+                                                                                id="flexSwitchCheckDefault">
+                                                                            <label class="form-check-label"
+                                                                                for="flexSwitchCheckDefault"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="/website/changePass"
+                                                                            class="d-flex align-items-center gap-3">
+                                                                            <div class="icon">
+                                                                                <img src="../../assets/images/icons/key.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Change Password</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="drop-li">
+                                                                        <a href="../../pages/index.html"
+                                                                            class="d-flex align-items-center gap-3 justify-content-center">
+                                                                            <div class="icon">
+                                                                                <img src="../../assets/images/icons/logout.svg"
+                                                                                    alt="">
+                                                                            </div>
+                                                                            <div>
+                                                                                <span>Logout</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <section id="listing" class="pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="ps-0  d-flex flex-wrap gap-2  align-items-center pb-50" style="list-style: none;">
+                        <li class="text-yeloish">Home</li>
+                        <li>></li>
+                        <li>Privacy Policy</li>
+
+                    </ul>
+                    <div class="listing d-flex justify-content-center align-items-center flex-wrap gap-2">
+                        <div class="text-center pb-50">
+                            <h3 class="cursive">Privacy Policy</h3>
+                            <h1 class="mb-0 fw-bold text-color">Heading will come here</h1>
+                        </div>
+
+                    </div>
+                    <div class="privacy">
+                        <p class=" text-graish">Please note that while I can provide you with a general overview of what
+                            is typically included in a Privacy Policy, the specific content may vary depending on the
+                            app and its developer. Here are some common elements found in a Privacy Policy
+                        </p>
+                        <div class="mb-3">
+                            <h5 class="mb-2 fw-600">Introduction and Acceptance</h5>
+                            <ul class="text-graish">
+                                <li>An introduction that explains the purpose and importance of the Privacy Policy.</li>
+                                <li>A statement that by using the app, users agree to the collection, use, and
+                                    disclosure of their personal information as outlined in the Privacy Policy.</li>
+                            </ul>
+
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="mb-2 fw-600">DefTypes of Information Collectedinitions</h5>
+                            <ul class="text-graish">
+                                <li>An explanation of the types of information that the app collects from users.
+                                </li>
+                                <li>This may include personal information (such as name, email address, or location),
+                                    device information (such as IP address or device ID), usage data, and cookies or
+                                    similar tracking technologies.
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="mb-3">
+                            <p class=" text-graish mb-0">Lorem Ipsum is simply dummy text of the printing and
+                                typesetting
+                                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type specimen
+                                book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum
+                                is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled it to make a type specimen book.</p>
+
+                        </div>
+                        <div class="mb-3">
+                            <p class=" text-graish mb-0">Lorem Ipsum is simply dummy text of the printing and
+                                typesetting
+                                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type specimen
+                                book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum
+                                is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled it to make a type specimen book.</p>
+
+                        </div>
+                        <div class="mb-3">
+                            <p class=" text-graish mb-0">Lorem Ipsum is simply dummy text of the printing and
+                                typesetting
+                                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type specimen
+                                book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum
+                                is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled it to make a type specimen book.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-contact text-white d-flex align-items-center justify-content-between flex-wrap">
+                        <div>
+                            <h3 class="mb-0">God Has Gifted You With Spiritual Gifts That Build Up The Body of
+                                Christ.
+                            </h3>
+                            <p class="mb-0">Click The Button In the Area And Volunteer or Donate.
+                            </p>
+                        </div>
+                        <a href="/website/contact" class="btn btn-custom mt-0">Contact Us</a>
+                    </div>
+                    <hr class="line">
+                    <div class="row customize-links">
+                        <div class="col-lg-3">
+                            <img src="../../assets/images/logo.png" alt="" class="mb-30" width="80">
+                            <h4 class="footer-h4 fs-20 text-white ">Newsletter</h4>
+                            <p class="text-white-50 fs-16 mb-30">Lorem Ipsum is simply dummy
+                                text of the printing and typesetting industry. Lorem Ipsum.</p>
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Email*"
+                                        aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                    <button class="btn btn-danger" type="button" id="button-addon1">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-3">
+                            <h4 class="footer-h4 text-white">Links</h4>
+                            <ul class="list-style-none">
+                                <li><a href="/website/dashboard">Home</a></li>
+                                <li><a href="/website/about">About us</a></li>
+                                <li><a href="../prayer/prayer.html">Prayers</a></li>
+                                <li><a href="../prayerCircle/prayercircle.html">Prayer Circle</a></li>
+                                <li><a href="../publicSquare/public.html">Public Square</a></li>
+                                <li><a href="../Originals/orignal.html">PQ Originals</a></li>
+                                <li><a href="../Inspirational-quotes.html">Inspirational Quotes</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3">
+                            <h4 class="footer-h4 text-white">Legal</h4>
+                            <ul class="list-style-none">
+                                <li><a href="/website/privacy">Privacy Policy</a></li>
+                                <li><a href="/website/terms">Terms of Service</a></li>
+                                <li><a href="/website/terms">Terms of Use</a></li>
+                                <li><a href="/website/faqs">Frequently asked questions</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3">
+                            <h4 class="footer-h4 text-white">Available on</h4>
+                            <div class="socials d-flex justify-content-start">
+                                <a href="#">
+                                    <div class="app-store">
+                                        <img src="../../assets/images/appstore.svg" alt="" width="100">
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="app-store">
+                                        <img src="../../assets/images/gstore.svg" alt="" width="100">
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr class="line">
+                    <div class="copyright py-4 d-flex justify-content-between align-items-center flex-wrap">
+                        <p class="mb-0">Copyright
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>. All rights reserved
+                        </p>
+                        <div class="socials-images mt-0">
+                            <a href="#">
+                                <img src="../../assets/images/icons/facebook.png" alt=""></a>
+                            <a href="#"> <img src="../../assets/images/icons/twitter.png" alt=""></a>
+                            <a href="#"><img src="../../assets/images/icons/reddit.png" alt=""></a>
+                            <a href="#"> <img src="../../assets/images/icons/youtube.png" alt=""></a>
+                            <a href="#"> <img src="../../assets/images/icons/instagram.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bundle.js"></script>
+    <script src="../../assets/js/script.js"></script>
+
+</body>
+
+</html>

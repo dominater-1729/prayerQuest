@@ -1,0 +1,242 @@
+<head>
+    {{>websiteHeader}}
+    {{{body}}}
+</head>
+<style>
+    @media (max-width:768px) {
+        .circle-video video {
+            width: 100% !important;
+        }
+    }
+</style>
+
+<section class="hero-section" id="aboutus">
+    <div class="container">
+        <div class="heros">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-details text-center">
+                        <h3 class="cursive text-center">Prayers</h3>
+                        <h1 class="text-white text-center d-flex justify-content-center mb-4">Test
+                        </h1>
+                        <ul class="ps-0 text-white d-flex flex-wrap gap-2 justify-content-center align-items-center"
+                            style="list-style: none;">
+                            <li class="text-yeloish">Home</li>
+                            <li>></li>
+                            <li class="text-yeloish">Public Square</li>
+                            <li>></li>
+                            <li>test</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="listing" class="pt-50 pb-50 detail-margin">
+    <div class="container">
+        <div class="row pt-50 pb-50">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-7">
+                <div class="circle-video position-relative text-center mb-10px">
+                    {{#equal prayerData.type "video"}}
+                    <video src="/assets/images/prayer/{{decryption prayerData.prayer}}" controls
+                        style="border-radius: 16px;width: 850px;"></video>
+                    {{/equal}}
+                    {{#equal prayerData.type "image"}}
+                    <img src="/assets/images/prayer/{{decryption prayerData.prayer}}"
+                        style="border-radius: 16px;width: 850px;" alt="">
+                    {{/equal}}
+                </div>
+                <div class="circle-details mt-15">
+                    <p class="text-graish mb-0" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
+                        Posted {{prayerData.createdAt}}</p>
+                    <div class="joint ">
+                        <div>
+                            <h4 class="mb-0 fs-36">{{decryption prayerData.title}}</h4>
+                            <div class="socials-images mt-15">
+                                <a href="#">
+                                    <img src="../../assets/images/icons/facebook.png" alt=""></a>
+                                <a href="#"> <img src="../../assets/images/icons/twitter.png" alt=""></a>
+                                <a href="#"><img src="../../assets/images/icons/reddit.png" alt=""></a>
+                                <a href="#"> <img src="../../assets/images/icons/youtube.png" alt=""></a>
+                                <a href="#"> <img src="../../assets/images/icons/instagram.png" alt=""></a>
+                                <a href="#"> <img src="../../assets/images/icons/mail.png" alt="" width="30"
+                                        height="30"></a>
+                            </div>
+                            <p class="mb-0 text-graish mt-15">{{decryption prayerData.description}}</p>
+                        </div>
+                    </div>
+                    <div class="count-circle d-block bg-white mt-15" style="max-width: 300px;">
+                        <div class="circle-watching gap-4 ">
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa fa-eye"></i>
+                                        2K
+                                    </h5>
+                                </div>
+                            </a>
+                            <div class="seprter"></div>
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        2K
+                                    </h5>
+                                </div>
+                            </a>
+                            <div class="seprter"></div>
+                            <a href="#">
+                                <div class="view-circle">
+                                    <h5 class="mb-0">
+                                        <i class="fa-solid fa-share"></i>
+                                        100
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="count-circle mt-15 justify-content-around" style="background-color: #F0F8FF;">
+                        <div class="circle-history">
+                            <h5><img src="../../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
+                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                            <h6>I am praying now</h6>
+                        </div>
+                        <div class="circle-history">
+                            <h5><img src="../../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
+                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                            <h6>I already prayed</h6>
+                        </div>
+                        <div class="circle-history">
+                            <h5><img src="../../assets/images/icons/bible.svg" alt="" class="img-fluid me-1"> <span
+                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
+                            <h6>I will pray later</h6>
+                        </div>
+                    </div>
+
+                    <hr class="line" style="border-color: #e6e6e6 !important;">
+                    <div class="footer-contact d-flex align-items-center justify-content-between flex-wrap pb-50 mt-5">
+                        <div>
+                            <h3 class="mb-0">{{prayerData.comments.length}} Comments</h3>
+                        </div>
+                        <a href="#" class="btn btn-custom mt-0 post-comment">+ Post a Comment</a>
+                    </div>
+                    <div class="comment-wrapper">
+                        {{#each prayerData.comments }}
+                        <div class="comments-list">
+                            <div class="user-details d-flex align-items-center justify-content-between mb-3">
+                                <div class=" d-flex align-items-center gap-2">
+                                    <img src="../../assets/images/avtar/1.jpg" alt="" width="50" height="50"
+                                        class="rounded-circle">
+                                    <div class="user-share">
+                                        <p class="mb-0"><b>{{by}}</b></p>
+                                    </div>
+                                </div>
+                                <a href="#" class="report-flaged">
+                                    <div data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-title="Report a abuse">
+                                        <i class="fa-regular fa-flag"></i>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <p class="text-graish mb-2">{{comment}}</p>
+                            <div class="timing">
+                                <span class="text-graish">1 day ago</span>
+                            </div>
+                        </div>
+                        {{/each}}
+
+                        <div class="shadow-btn text-center">
+                            <a href="#" class="btn-shadow btn ">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade " id="flagged" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
+    role="dialog">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+        <div class="modal-content">
+            <div class="modal-body donate-modal py-5">
+                <div
+                    class="mb-3 donate-img text-center d-flex justify-content-center align-items-center flex-column flex-wrap">
+                    <img src="../../assets/images/icons/flagged.svg" alt="" class="img-fluid mb-1 rounded-circle"
+                        width="120" height="120" style="height: 120px !important;">
+                    <span class="username">Report Abuse</span>
+                    <p class="mb-0 text-graish">Help us keep our community safe. Report abuse now.</p>
+                </div>
+                <form action="" class="my-3">
+                    <div class="custom-margin">
+                        <input type="email" class="form-control form-custom" placeholder="Enter Email">
+                    </div>
+                    <div class="custom-margin">
+                        <textarea name="" id=" " rows="7" class="form-control form-custom"
+                            placeholder="Enter description"></textarea>
+                    </div>
+                </form>
+
+                <div class="text-center d-flex align-items-center gap-3">
+                    <a href="#" class="btn btn-cancel text-color bg-light-50 w-50 " data-bs-dismiss="modal">Cancel</a>
+                    <a href="#" class="btn btn-custom mt-0 w-50">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade " id="postcomment" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
+    role="dialog">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel">Post a Comment</h1>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body donate-modal">
+                <div
+                    class="mb-3 donate-img text-center d-flex justify-content-center align-items-center flex-column flex-wrap">
+                    <img src="../../assets/images/avtar/2.jpg" alt="" class="img-fluid mb-1 rounded-circle" width="120"
+                        height="120" style="height: 120px !important;">
+                    <span class="username">{{decryption userData.firstname}}</span>
+                </div>
+                <form action="/website/comments/{{prayerData.prayerid}}" method="post" enctype="multipart/form-data">
+                    <div class="custom-margin">
+                        <textarea name="comment" id=" " rows="7" class="form-control form-custom"
+                            placeholder="Additional Comments..."></textarea>
+                    </div>
+                    <div class="custom-margin">
+                        <label for="file" class="custom-file" style="height: 200px !important;">
+                            <input type="file" name="commentImage" id="file" hidden="">
+                            <div class="text-center text-preview">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4 19.5H20V12.5H22V20.5C22 21.0523 21.5523 21.5 21 21.5H3C2.44772 21.5 2 21.0523 2 20.5V12.5H4V19.5ZM13 9.5V16.5H11V9.5H6L12 3.5L18 9.5H13Z"
+                                        fill="black"></path>
+                                </svg>
+                                <h4 class="fs-16 fw-600 text-color mb-0">Upload a Photo/Video</h4>
+                                <span style="color: #DC2F3D;">Select File</span>
+                            </div>
+                            <div class="preview-image position-relative"
+                                style="display: none;height: 200px !important;">
+                                <img src="" alt="" class="img-fluid" id="preview">
+
+                            </div>
+                        </label>
+                    </div>
+                    <div class="text-center d-flex align-items-center gap-3">
+                        <a href="#" class="btn btn-cancel text-color bg-light-50 w-50 "
+                            data-bs-dismiss="modal">Cancel</a>
+                        <button type="submit" class="btn btn-custom mt-0 w-50">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{>websiteFooter}} {{{body}}}

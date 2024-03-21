@@ -1,0 +1,120 @@
+<head>
+    {{>websiteHeader}}
+    {{{body}}}
+</head>
+<section class="hero-section" id="aboutus">
+    <div class="container">
+        <div class="heros">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-details text-center">
+                        <h3 class="cursive text-center">Give</h3>
+                        <h1 class="text-white text-center d-flex justify-content-center mb-4">Prayer for a Miracle
+                        </h1>
+                        <ul class="ps-0 text-white d-flex flex-wrap gap-2 justify-content-center align-items-center"
+                            style="list-style: none;">
+                            <li class="text-yeloish">Home</li>
+                            <li>></li>
+                            <li>Give</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="listing" class="pt-50 pb-50 detail-margin">
+    <div class="container">
+        <div class="row pt-50 pb-50 justify-content-center">
+            <div class="col-lg-6">
+                <div class="card shadow-mine">
+                    <div class="card-body my-30px">
+                        <div class="modal-body donate-modal">
+                            <div class="donate-img text-center">
+                                <img src="../assets/images/icons/dollar.svg" alt="" class="img-fluid mb-3">
+                                <p class=" text-graish">If you like this platform, our organization would love to
+                                    have your
+                                    support.
+                                    Please consider
+                                    making a contribution to help continue our cause in the community. An amount is
+                                    greatly
+                                    appreciated.</p>
+                            </div>
+                            <form action="">
+                                <div class="custom-margin">
+                                    <label for="rupees">Enter Amount (USD)</label>
+                                    <input type="text" class="form-control form-custom" value="$40">
+                                </div>
+                                <div class="custom-margin">
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item me-2" role="presentation">
+                                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-home" type="button" role="tab"
+                                                aria-controls="pills-home" aria-selected="true">Recurring</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-profile" type="button" role="tab"
+                                                aria-controls="pills-profile" aria-selected="false">Give One
+                                                Time</button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                            aria-labelledby="pills-home-tab" tabindex="0">
+                                            <div class="custom-margin">
+                                                <label for="Frequency">Frequency</label>
+                                                <div class="radio-toggle d-flex justify-content-between flex-wrap">
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            Every Week
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            Every 2 Weeks
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault3">
+                                                        <label class="form-check-label" for="flexRadioDefault3">
+                                                            Every month
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault4">
+                                                        <label class="form-check-label" for="flexRadioDefault4">
+                                                            Every year
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="custom-margin">
+                                                <label for="date">Starting</label>
+                                                <input type="date" class="form-control form-custom">
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                            aria-labelledby="pills-profile-tab" tabindex="0"></div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-custom">Donate $40</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>websiteFooter}} {{{body}}}
