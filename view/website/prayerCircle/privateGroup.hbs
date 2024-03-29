@@ -10,7 +10,8 @@
                 <div class="col-lg-12">
                     <div class="hero-details text-center">
                         <h3 class="cursive text-center">Prayers Circle</h3>
-                        <h1 class="text-white text-center d-flex justify-content-center mb-4">Test Group
+                        <h1 class="text-white text-center d-flex justify-content-center mb-4">{{decryption
+                            privateGroupData.groupName}}
                         </h1>
                         <ul class="ps-0 text-white d-flex flex-wrap gap-2 justify-content-center align-items-center"
                             style="list-style: none;">
@@ -18,7 +19,7 @@
                             <li>></li>
                             <li class="text-yeloish">Prayer Circle</li>
                             <li>></li>
-                            <li>Test Group</li>
+                            <li>{{decryption privateGroupData.groupName}}</li>
                         </ul>
                     </div>
                 </div>
@@ -32,29 +33,32 @@
         <div class="row pt-50 pb-50">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-7">
                 <div class="circle-video position-relative text-center">
-                    <video src="../../assets/videos/prayer.mp4" controls
-                        style="border-radius: 16px;width: 750px;"></video>
+                    {{!-- <video src="../../assets/videos/prayer.mp4" controls --}} {{!--
+                        style="border-radius: 16px;width: 750px;"></video> --}}
+
+
+                    <img src="/assets/images/groupImage/{{decryptImage privateGroupData.groupImage}}" alt=""
+                        class="img-fluid me-1">
                 </div>
                 <div class="circle-details mt-2">
                     <p class="text-graish mb-0" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
-                        Posted 14
-                        Mins ago</p>
+                        {{privateGroupData.groupAge}}</p>
                     <div class="joint  mt-2">
                         <div>
-                            <h4 class="mb-0">Group Name</h4>
-                            <p class="mb-0 "><b>1.8K</b> <span class="text-graish">Members</span> • <b>40+</b> <span
+                            <h4 class="mb-0">{{decryption privateGroupData.groupName}}</h4>
+                            <p class="mb-0 "><b>{{inc privateGroupData.members.length}}</b> <span
+                                    class="text-graish">Members</span> • <b>40+</b> <span
                                     class="text-graish">Prayer</span></p>
                         </div>
                         <div>
-                            <a href="member.html" class="btn btn-cancel bg-light-50 text-color fw-600 px-4"
+                            <a href="/website/group/members/{{privateGroupData._id}}"
+                                class="btn btn-cancel bg-light-50 text-color fw-600 px-4"
                                 style="border-radius: 16px;"><img src="../../assets/images/icons/member.svg"
                                     class="img-fluid" alt="">
                                 View Members</a>
                         </div>
                     </div>
-                    <p class="mb-0 mt-2 text-graish">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Necessitatibus
-                        asperiores fugit quos repellat cupiditate molestiae sequi tempora.</p>
+                    <p class="mb-0 mt-2 text-graish">{{decryption privateGroupData.description}}</p>
                     <div class="mt-15 d-flex justify-content-between align-items-center flex-wrap gap-2">
                         <div class="count-circle" style="width: 600px;">
                             <div class="circle-history">
@@ -76,7 +80,10 @@
                                 <h6>I will pray later</h6>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-custom mt-0">Join Group</a>
+                        {{!-- <a href="#" class="btn btn-custom mt-0">Join Group</a> --}}
+
+                        {{{isJoined privateGroupData.isAdmin privateGroupData.isRequested privateGroupData.isMember
+                        privateGroupData._id}}}
                     </div>
                 </div>
                 <div class="content-container">
@@ -108,5 +115,6 @@
         $(".report-flaged").click(function () {
             $("#flagged").modal("show")
         })
+
     })
 </script>

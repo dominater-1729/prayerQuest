@@ -17,6 +17,7 @@ const iv = crypto
   .substr(0, 16);
 
 const decryptData = (encrypted_text) => {
+  if (!encrypted_text) return "";
   const buff = Buffer.from(encrypted_text, "base64");
   encrypted_text = buff.toString("utf-8");
   const decryptor = crypto.createDecipheriv(encryptionMethod, secret, iv);

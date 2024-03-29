@@ -2,11 +2,10 @@ const fs = require("fs");
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegPath);
+const path = require("path");
 
 process.on("message", (payload) => {
     const { tempFilePath, name } = payload;
-    console.log(tempFilePath);
-    console.log(`./temp/${name}`)
 
     const endProcess = (endPayload) => {
         const { statusCode, text } = endPayload;
@@ -22,6 +21,10 @@ process.on("message", (payload) => {
         process.exit();
     };
 
+    const storePath = path.join(__dirname, '..', '..', '/public/assets/images/prayer');
+
+    const compressedImagePath = `${storePath}/${name}`;
+
     // Process video and send back the result
     ffmpeg(tempFilePath)
         .fps(30)
@@ -33,6 +36,6 @@ process.on("message", (payload) => {
             console.log(err)
             endProcess({ statusCode: 500, text: err.message });
         })
-        .save(`${__dirname}/temp/${name}`);
+        .save(compressedImagePath);
 });
 

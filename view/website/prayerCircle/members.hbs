@@ -21,7 +21,7 @@
                 <div class="listing d-flex justify-content-between align-items-center flex-wrap gap-2">
                     <div>
                         <h3 class="mb-0 fw-bold">Members Listings</h3>
-                        <p class="mb-0 text-black-50">( Showing 450 Results )
+                        <p class="mb-0 text-black-50">( Showing {{inc members.length}} Results )
                         </p>
                     </div>
                     <div class="search d-flex gap-3">
@@ -45,47 +45,35 @@
                     <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-7">
                         <div class="card br-16" style="height: 380px;">
                             <div class="member-cover w-100">
-                                <img src="../../assets/images/bg.png" alt="" class="w-100 h-160px">
+                                <img src="/assets/images/groupImage/{{decryptImage groupImage}}" alt=""
+                                    class="w-100 h-160px">
                             </div>
                             <div class="member-profile text-center pb-5">
-                                <img src="../../assets/images/avtar/2.jpg" alt="" class="rounded-circle mb-2"
-                                    width="100" height="100">
-                                <h5 class="mb-0 fs-18 fw-600 pb-2">Annette Black</h5>
-                                <p class="badge mb-0 custom-badge br-16">Owner</p>
+                                <img src="/assets/images/userImage/{{decryption admin.image}}" alt=""
+                                    class="rounded-circle mb-2" width="100" height="100">
+                                <h5 class="mb-0 fs-18 fw-600 pb-2">{{decryption admin.firstname}} {{decryption
+                                    admin.lastname}}</h5>
+                                <p class="badge mb-0 custom-badge br-16">Admin</p>
                             </div>
                         </div>
                     </div>
+                    {{#each members}}
                     <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-7">
                         <div class="card br-16" style="height: 380px;">
                             <div class="member-cover w-100">
-                                <img src="../../assets/images/bg.png" alt="" class="w-100 h-160px">
+                                <img src="/assets/images/userImage/{{../decryption image}}" alt=""
+                                    class="w-100 h-160px">
                             </div>
                             <div class="member-profile text-center pb-5">
-                                <img src="../../assets/images/avtar/2.jpg" alt="" class="rounded-circle mb-2"
-                                    width="100" height="100">
-                                <h5 class="mb-0 fs-18 fw-600 pb-2">Annette Black</h5>
-                            </div>
-                            <div class="modal-footer justify-content-center py-3 border-top"
-                                style="    margin-top: auto;">
-                                <div class="dropdown">
-                                    <a href="#" class="mb-0 fs-14 fw-600  dropdown-toggle" data-bs-toggle="dropdown"
-                                        aria-expanded="false" style="color: #DC2F3D;"><img
-                                            src="../../assets/images/icons/setting.png" alt=""> Manage</a>
-                                    <ul class="dropdown-menu border-0 py-0 shadow">
-                                        <!-- <li><a href="#" class="dropdown-item " style="padding: 12px;"
-                                                    type="button">Transfer
-                                                    Ownership</a></li> -->
-                                        <li><a href="#" class="dropdown-item" style="padding: 12px;"
-                                                type="button">Remove</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-
+                                <img src="/assets/images/userImage/{{../decryption image}}" alt=""
+                                    class="rounded-circle mb-2" width="100" height="100">
+                                <h5 class="mb-0 fs-18 fw-600 pb-2">{{../decryption firstname}} {{../decryption
+                                    lastname}}</h5>
+                                <p class="badge mb-0 custom-badge br-16">Member</p>
                             </div>
                         </div>
                     </div>
-
+                    {{/each}}
                 </div>
             </div>
         </div>

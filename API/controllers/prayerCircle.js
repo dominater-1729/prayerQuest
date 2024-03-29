@@ -31,7 +31,7 @@ exports.createCircleGroup = async (req, res) => {
       groupImage = encryption(req.file.filename);
     }
     let data = new circleModel({
-      userId: _id,
+      admin: _id,
       groupImage: groupImage,
       groupName: encryption(groupName),
       description: encryption(description),

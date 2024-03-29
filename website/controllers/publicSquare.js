@@ -91,6 +91,7 @@ exports.public = async (req, res) => {
       result = prayerdata[0].edges;
       totalpage = prayerdata[0].pageInfo[0].count;
     }
+
     let pages = Math.ceil(totalpage / limit);
     result.map((time) => {
       time.createdAt = timeAgo(time.createdAt);
@@ -112,18 +113,29 @@ exports.public = async (req, res) => {
   }
 };
 
+exports.listPublicSquare = async ({ query }) => {
+  try {
+    const publicSquares = await prayerModel.find({ groupId: null }).populate({ path: 'userId', select: 'firstname lastname image' });
+    publicSquares.map((time) => {
+      time.groupAge = timeAgo(time.createdAt);
+    });
+    return publicSquares;
+  } catch (error) {
+    console.log(error);
+    return res.redirect("back");
+  }
+};
+
 exports.createPrayer = async (req, res) => {
   try {
     let id = req.session.user;
     const { successToast, errorToast } = req.cookies || {};
     res.clearCookie("successToast");
     res.clearCookie("errorToast");
-    let groupId = "65f2d389644ae6843b51f0eb";
     return res.render("../view/website/publicSquare/createPrayer.hbs", {
       id,
       successToast,
       errorToast,
-      groupId,
     });
   } catch (error) {
     console.log(error);
@@ -178,6 +190,7 @@ exports.addPrayer = async (req, res) => {
 };
 
 exports.squareDetails = async (req, res) => {
+  const data = await prayerModel.find();
   try {
     let prayerId = req.params.id;
     let prayerData = await prayerModel.aggregate([
@@ -196,7 +209,10 @@ exports.squareDetails = async (req, res) => {
         }
       },
       {
-        $unwind: '$comments'
+        $unwind: {
+          path: "$comments",
+          preserveNullAndEmptyArrays: true
+        }
       },
       {
         $lookup: {
@@ -207,7 +223,7 @@ exports.squareDetails = async (req, res) => {
         }
       },
       {
-        $unwind: '$commentedBy'
+        $unwind: { path: '$commentedBy', preserveNullAndEmptyArrays: true }
       },
       {
         $project: {
@@ -218,7 +234,7 @@ exports.squareDetails = async (req, res) => {
           createdAt: "$createdAt",
           prayer: { $ifNull: ["$prayerImage", "$prayerVideo"] },
           type: "$type",
-          comment: { comment: '$comments.comment', by: '$commentedBy.firstname' },
+          comment: { comment: '$comments.comment', by: '$commentedBy.firstname', media: '$comments.media' },
           commentedBy: 1
         },
       },
@@ -238,6 +254,7 @@ exports.squareDetails = async (req, res) => {
       }
     ]);
 
+    console.log("prayerData", prayerData);
 
     prayerData.map((item) => {
       item.createdAt = timeAgo(item.createdAt);
@@ -246,9 +263,16 @@ exports.squareDetails = async (req, res) => {
     prayerData = prayerData[0];
 
     prayerData.comments.map((item) => {
-      item.comment = decryption(item.comment)
-      item.by = decryption(item.by);
-    })
+
+      if (item.comment)
+        item.comment = decryption(item.comment);
+
+      if (item.by)
+        item.by = decryption(item.by);
+
+      if (item.media)
+        item.media = decryption(item.media);
+    });
 
     return res.render("../view/website/publicSquare/squareDetails.hbs", {
       decryption,
@@ -268,3 +292,5 @@ exports.squareDetailsStats = async (req, res) => {
     return res.redirect("back");
   }
 };
+
+

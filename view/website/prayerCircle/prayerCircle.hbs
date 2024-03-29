@@ -32,7 +32,7 @@
                 <div class="listing d-flex justify-content-between align-items-center flex-wrap gap-2">
                     <div>
                         <h3 class="mb-0 fw-bold">Prayer Circle Groups Listings</h3>
-                        <p class="mb-0 text-black-50">( Showing 450 Results )
+                        <p class="mb-0 text-black-50">( Showing {{prayerCircleData.length}} Results )
                         </p>
                     </div>
                     <div class="search d-flex gap-3">
@@ -108,10 +108,13 @@
                 </div>
             </div>
         </div>
-        <div class="row pt-50 pb-50">
-            <div class="col-lg-4 col-md-12 col-sm-12 col-12 mb-7">
+        <div class="row pt-50 pb-50 circle-group-listing">
+            {{#each prayerCircleData}}
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 mb-7" groupId={{_id}}>
                 <div class="circle-video videos-div position-relative">
-                    <video src="../../assets/videos/prayer.mp4" class="mb-10px" controls="" width="100%"></video>
+                    {{!-- <video src="../../assets/videos/prayer.mp4" class="mb-10px" controls="" width="100%"></video>
+                    --}}
+                    <img src="/assets/images/groupImage/{{decryptImage groupImage}}" alt="" class="img-fluid">
                     <!-- <img src="../assets/images/circle-video.png" alt=""> -->
                     <!-- <div class="overlay"></div>
                             <div class="video-play-icon">
@@ -122,30 +125,40 @@
                 </div>
                 <div class="circle-details ">
                     <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
-                        Posted 14
-                        Mins ago</p>
+                        Posted {{groupAge}}
+                    </p>
                     <div class="joint">
                         <div>
-                            <a href="/website/privateGroup">
-                                <h4 class="mb-0">TEST GROUP/CIRCLE 9</h4>
+                            <a href="/website/privateGroup/{{_id}}">
+                                <h4 class="mb-0">{{../decryption groupName}}</h4>
                             </a>
-                            <p class="mb-0 paragraph"><b>1.8K</b> <span class="text-graish">Members</span> •
+                            <p class="mb-0 paragraph"><b>{{inc members.length}}</b> <span
+                                    class="text-graish">Members</span>
+                                •
                                 <b>40+</b> <span class="text-graish">Prayer</span>
                             </p>
-
                         </div>
                         <div>
-                            <a href="#" class="btn btn-outline-custom">Join</a>
+
+                            {{#if (eq isAdmin true)}}
+                            <button class="btn btn-outline-custom circle-group-button invite-list" value="invite"
+                                groupId={{_id}}>Invite</button>
+                            {{else if (eq isMember true)}}
+                            <a href="/website/invite" class="btn btn-outline-custom" circle-group-button value="joined"
+                                groupId={{_id}}>Joined</a>
+                            {{else if (eq isRequested true)}}
+                            <button class="btn btn-outline-custom circle-group-button" value="requested" groupId={{_id}}
+                                disabled="true">Requested</button>
+                            {{else}}
+                            <a href="/website/join/{{_id}}" class="btn btn-outline-custom circle-group-button"
+                                value="join" groupId={{_id}}>Join </a>
+                            {{/if}}
                         </div>
                     </div>
-
-                    <p class="text-graish mt-15 para"> Test Managers 1Test Managers 1Test Managers 1Test
-                        Managers
-                        1Test Managers...
-                        <a href="/website/privateGroup" class="read-mode">Read
+                    <p class="text-graish mt-15 para"> {{../decryption description}}
+                        <a href="/website/privateGroup/{{_id}}" class="read-mode">Read
                             More</a>
                     </p>
-
                     <div class="count-circle mt-15">
                         <div class="circle-history">
                             <h5><img src="../../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
@@ -165,74 +178,99 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 col-12 mb-7">
-                <div class="circle-video videos-div position-relative">
-                    <!-- <video src="../../assets/videos/prayer.mp4" class="mb-10px" controls="" width="100%"></video> -->
-                    <img src="../../assets/images/static.png" alt="" class="mb-10px">
-                    <!-- <div class="overlay"></div>
-                            <div class="video-play-icon">
-                                <a href="#">
-                                    <img src="../assets/images/play-icon.png" width="70" height="70" alt="">
-                                </a>
-                            </div> -->
-                </div>
-                <div class="circle-details mt-2">
-                    <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
-                        Posted 14
-                        Mins ago</p>
-                    <div class="joint">
-                        <div>
-                            <a href="/website/privateStaticGroup">
-                                <h4 class="mb-0">TEST GROUP/CIRCLE 9</h4>
-                            </a>
-                            <p class="mb-0 paragraph"><b>1.8K</b> <span class="text-graish">Members</span> •
-                                <b>40+</b> <span class="text-graish">Prayer</span>
-                            </p>
+            {{/each}}
 
-                        </div>
-                        <div>
-                            <a href="#" class="btn btn-outline-custom">Join</a>
-                        </div>
-                    </div>
-
-                    <p class="text-graish mt-15 para"> Test Managers 1Test Managers 1Test Managers 1Test
-                        Managers
-                        1Test Managers...
-                        <a href="/website/privateStaticGroup" class="read-mode">Read
-                            More</a>
-                    </p>
-
-                    <div class="count-circle mt-15">
-                        <div class="circle-history">
-                            <h5><img src="../../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
-                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
-                            <h6>I am praying now</h6>
-                        </div>
-                        <div class="circle-history">
-                            <h5><img src="../../assets/images/icons/folded.svg" alt="" class="img-fluid me-1"> <span
-                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
-                            <h6>I already prayed</h6>
-                        </div>
-                        <div class="circle-history">
-                            <h5><img src="../../assets/images/icons/bible.svg" alt="" class="img-fluid me-1"> <span
-                                    class=" badge-up" style="font-weight: 500;">2k</span></h5>
-                            <h6>I will pray later</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
 
+<div class="modal fade " id="invite" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
+    role="dialog">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+        <div class="modal-content">
+            <div class="modal-header border-0 justify-content-center">
+                <h1 class="modal-title text-color fs-5" id="exampleModalLiveLabel">Invite Friends</h1>
+            </div>
+            <div class="modal-body donate-modal">
+
+                <form action="" class="">
+                    <div id="search-list" class="position-relative">
+                        <input type="text" class="form-control form-custom ps-3" style="width: 100%;"
+                            placeholder="Search...">
+                        <a href="#" class="btn btn-danger search-icon"
+                            style="right: 0;
+                        padding: 10px 18px;
+                        margin-top: 0px;
+                        border-top-left-radius: 0px !important;border-bottom-left-radius: 0px !important;border-radius: 16px;"><i class="fa fa-search"></i></a>
+                    </div>
+                    <a href="#">
+                        <div class="user-details d-flex align-items-center gap-2 mt-3">
+                            <div class="d-flex justify-content-center align-items-center rounded-circle"
+                                style="width: 36px;height: 36px;background-color: #F0F8FF;">
+                                <i class="fa fas fa-user text-color"></i>
+                            </div>
+                            <div class="user-share d-flex align-items-center justify-content-between gap-2">
+                                <p class="mb-0 fw-600 text-color">Invite a Friend</p>
+                            </div>
+
+                        </div>
+                    </a>
+                    <hr style="border: 1px solid #e6e6e6;">
+                    <div class="user-person">
+                        <h5 class="fs-16 fw-600 mb-0">Send Invite to Friends</h5>
+                        <ul class="ps-0 mt-3 scrollbar" id="scroll">
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-custom mt-0">Done</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 {{>websiteFooter}} {{{body}}}
 <script>
     $(document).ready(function () {
-        $(".invite-list").click(function () {
-            $("#invite").modal("show")
+        $(".invite-list").click(function (event) {
+            console.log("this", this)
+            const groupId = $(this).attr("groupid");
+            console.log(groupId);
+
+            $.ajax({
+                url: `/website/list/non-members/${groupId}`,
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function (res) {
+                    console.log("res", res);
+                    $("#invite").modal("show");
+
+                    let data = "";
+
+                    res.forEach(el => {
+                        data += ` <li class="invite-person">
+                                <a href="">
+                                    <div class="person-imgg d-flex align-items-center gap-3">
+                                        <img src="../../assets/images/userImage/${el.image}" alt="" width="60" height="60"
+                                            class="rounded-circle">
+                                        <p class="mb-0 fw-600 fs-16 text-color">${el.name}</p>
+                                    </div>
+                                </a>
+                                <a href = "/website/invite/${groupId}/${el.id}" class="fs-16 text-green fw-600" id = "xyz">Invite</a>
+                            </li>`
+                    })
+
+                    $('#scroll').html(data);
+                },
+            });
+
         })
     })
 </script>
+
 <script>
     $(document).ready(function () {
         $('#list-search').on('keyup', function () {

@@ -4,10 +4,12 @@ const Schema = mongoose.Schema,
 
 let prayerCircleSchema = new mongoose.Schema(
   {
-    userId: { type: mongoose.Schema.Types.ObjectId, required: true },
+    admin: { type: mongoose.Schema.Types.ObjectId, ref: 'user', required: true },
     groupImage: { type: String, default: null },
     groupName: { type: String, required: true },
     description: { type: String, required: true },
+    members: { type: [mongoose.Schema.Types.ObjectId], ref: 'user', default: [] },
+    pending: { type: [ObjectId], default: [], ref: 'user' }
   },
   {
     timestamps: true,

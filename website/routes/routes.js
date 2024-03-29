@@ -21,7 +21,7 @@ const videosController = require("../controllers/videos");
 const commentsController = require('../controllers/comments')
 const compressMiddleware = require('../middlewares/compress')
 
-//multer
+// multer
 const userProfile = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./public/assets/images/userImage");
@@ -140,7 +140,7 @@ router.get("/success", loginController.successpassword);
 router.get("/logout", loginController.logout);
 
 //dashboard
-router.get("/dashboard", userAuth, dashboardController.dashboard);
+router.get("/dashboard", dashboardController.dashboard);
 
 //about
 router.get("/about", aboutController.about);
@@ -268,7 +268,7 @@ router.get("/originalPrayer", originalController.originalListing);
 router.get("/originalDetails", originalController.originalDetails);
 
 //prayer circle
-router.get("/prayerCircle", userAuth, circleController.prayerCircle);
+router.get("/prayerCircle", circleController.prayerCircle);
 router.get("/createGroup", userAuth, circleController.createGroup);
 router.post(
   "/createGroup/:id",
@@ -287,10 +287,13 @@ router.post(
   ],
   circleController.createCircleGroup
 );
-router.get("/privateGroup", circleController.privateGroup);
-router.get("/privateGroup", circleController.privateGroup);
+router.get("/privateGroup/:groupId", circleController.privateGroup);
 router.get("/privateStaticGroup", circleController.privateStaticGroup);
 router.get("/members", circleController.groupMembers);
+router.get("/join/:groupId", userAuth, circleController.JoinGroup);
+router.get("/list/non-members/:groupId", userAuth, circleController.listNonMembers);
+router.get("/invite/:groupId/:userId", userAuth, circleController.InviteGroup);
+router.get("/group/members/:groupId", userAuth, circleController.listMembers);
 
 //prayer
 router.get("/prayers", prayerController.prayer);

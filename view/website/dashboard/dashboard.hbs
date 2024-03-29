@@ -1015,38 +1015,51 @@
                 only viewable by
                 group members </p>
             <div class="row">
+                {{#each prayerCircleList}}
                 <div class="col-lg-4 mb-7">
                     <div class="circle-video videos-div position-relative">
-                        <video src="../assets/videos/prayer.mp4" class="mb-10px" controls width="100%"></video>
-                  
+                        <img src="/assets/images/groupImage/{{decryptImage groupImage}}" class="img-fluid" alt="">
                     </div>
-                    <div class="circle-details ">
-                        <p class="text-graish mb-10px" style="font-size: 14px;"><i class="fa-regular fa-clock"></i>
-                            Posted 14
-                            Mins ago</p>
+                    <div class="circle-details">
                         <div class="joint">
                             <div>
-                                <a href="/website/prayerCircle">
-                                    <h4 class="mb-0">TEST GROUP/CIRCLE 9</h4>
+                                <a href="/website/privateGroup/{{_id}}">
+                                    <h4 class="mb-0">{{../decryption groupName}}</h4>
                                 </a>
-                                <p class="mb-0 paragraph"><b>1.8K</b> <span class="text-graish">Members</span> •
+                                <p class="mb-0 paragraph"><b>{{inc members.length}}</b> <span
+                                        class="text-graish">Members</span> •
                                     <b>40+</b> <span class="text-graish">Prayer</span>
                                 </p>
 
                             </div>
                             <div>
-                                <a href="" class="btn btn-outline-custom">Join</a>
+
+                                {{!-- <a href="" class="btn btn-outline-custom">{{}}</a> --}}
+                                <div>
+
+                                    {{#if (eq isAdmin true)}}
+                                    <a href="/website/privateGroup/{{_id}}"
+                                        class="btn btn-outline-custom circle-group-button invite-list" value="invite"
+                                        groupId={{_id}}>Invite</a>
+                                    {{else if (eq isMember true)}}
+                                    <a href="/website/invite" class="btn btn-outline-custom" circle-group-button
+                                        value="joined" groupId={{_id}}>Joined</a>
+                                    {{else if (eq isRequested true)}}
+                                    <button class="btn btn-outline-custom circle-group-button" value="requested"
+                                        groupId={{_id}} disabled="true">Requested</button>
+                                    {{else}}
+                                    <a href="/website/join/{{_id}}" class="btn btn-outline-custom circle-group-button"
+                                        value="join" groupId={{_id}}>Join </a>
+                                    {{/if}}
+                                </div>
                             </div>
                         </div>
-
-                        <p class="text-graish mt-15 para"> Test Managers 1Test Managers 1Test Managers 1Test
-                            Managers
-                            1Test Managers...
-                            <a href="/website/prayerCircle" class="read-mode">Read
+                        <p class="text-graish mt-15 para">{{../decryption description}}
+                            <a href="/website/privateGroup/{{_id}}" class="read-mode">Read
                                 More</a>
                         </p>
 
-                        <div class="count-circle mt-15">
+                        {{!-- <div class="count-circle mt-15">
                             <div class="circle-history">
                                 <h5><img src="../assets/images/icons/pray.svg" alt="" class="img-fluid me-1"> <span
                                         class=" badge-up" style="font-weight: 500;">2k</span></h5>
@@ -1062,10 +1075,12 @@
                                         class=" badge-up" style="font-weight: 500;">2k</span></h5>
                                 <h6>I will pray later</h6>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
-                <div class="col-lg-4 mb-7">
+                {{/each}}
+
+                {{!-- <div class="col-lg-4 mb-7">
                     <div class="circle-video videos-div position-relative">
                         <!-- <video src="../assets/videos/prayer.mp4" class="mb-10px" controls width="100%"></video> -->
                         <img src="../assets/images/static.png" class="mb-10px" alt="">
@@ -1120,7 +1135,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="circle-view text-center">
                 <a href="/website/prayerCircle" class="btn btn-custom">View All Groups</a>

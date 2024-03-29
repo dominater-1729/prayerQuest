@@ -11,6 +11,7 @@ const validationError = (req) => {
 }
 
 const mediaValidator = (req, res) => {
+    console.log("in media validator", req.file.filename);
     let media = "", type = "";
     if (req.file && req.file.mimetype && req.file.mimetype.startsWith("image")) {
         media = encryption(req.file.filename);

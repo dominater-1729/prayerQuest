@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema(
     facebook: { type: String, default: null },
     linkedIn: { type: String, default: null },
     coverImage: { type: String, default: null },
+    notification: { type: [ObjectId], default: [] }
   },
   {
     timestamps: true,

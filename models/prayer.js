@@ -4,8 +4,8 @@ let Schema = mongoose.Schema,
 
 let prayerSchema = new mongoose.Schema(
   {
-    userId: ObjectId,
-    groupId: ObjectId,
+    userId: { type: ObjectId, ref: 'user', required: true },
+    groupId: { type: ObjectId, ref: 'circlePrayers', default: null },
     title: { type: String, required: true },
     postType: { type: String, required: true },
     description: { type: String, required: true },
